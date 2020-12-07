@@ -193,8 +193,62 @@
         margin-right: 45px; }
         #footer .footer_right .footer_list > li:nth-of-type(n+6) {
           margin-top: 20px; }
-    #footer .footer_right .family ul {
-      display: none; }
+    #footer .footer_right .family {
+      line-height: 33px;
+      color: #333; }
+      #footer .footer_right .family > * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #989898;
+        padding-left: 10px; }
+      #footer .footer_right .family > a {
+        height: 35px;
+        float: left; }
+      #footer .footer_right .family .fsite, #footer .footer_right .family ul {
+        width: 150px; }
+      #footer .footer_right .family .fsite {
+        background: #fff;
+        font-weight: 700;
+        border-top: none;
+        position: relative; }
+        #footer .footer_right .family .fsite::before {
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          content: "";
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          width: 11px;
+          height: 7px;
+          background: url("../images/layout/arr_family.gif") no-repeat; }
+      #footer .footer_right .family.on .fsite::before {
+        -webkit-transform: rotate(180deg) translateY(5px);
+        -moz-transform: rotate(180deg) translateY(5px);
+        -o-transform: rotate(180deg) translateY(5px);
+        -ms-transform: rotate(180deg) translateY(5px);
+        transform: rotate(180deg) translateY(5px); }
+      #footer .footer_right .family ul {
+        position: absolute;
+        bottom: 36px;
+        left: 0;
+        padding: 13px 10px 9px;
+        border-bottom: none;
+        background: #fff;
+        display: none; }
+        #footer .footer_right .family ul li a {
+          font-weight: 500; }
+          #footer .footer_right .family ul li a:hover {
+            color: #531984; }
+      #footer .footer_right .family .f_go {
+        padding-right: 12px;
+        background: #43366d;
+        color: #ffffff;
+        margin-left: 5px;
+        font-size: 12px; }
 
 @media screen and (max-width: 1200px) {
   #pcHeader {

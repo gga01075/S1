@@ -9,6 +9,7 @@ $(document).ready(function () {
   var timerResize = 0; //resize이벤트의 실행문 누적을 방지 하기위해 
   var timerWheel = 0; //mousewheel 이벤트의 실행문 누적을 방지
   var sec45_top =  $('#sec45').offset().top;
+  var swiper_timer = 0;
 
   //1) resize이벤트 cntPosY배열에 섹션의 offset().top 저장 + 하단푸터인식
   _win.on('resize', function () {
@@ -23,7 +24,6 @@ $(document).ready(function () {
       for (var i = 0; i < total; i++) {
         cntPosY[i] = _cnt.eq(i).offset().top;
       }
-      console.log(cntPosY);
 
       //창사이즈에 변화가 생길때 현재 활성화된 섹션이 잘 보여지도록 애니메이트 추가 처리
       $('html, body').stop().animate({
@@ -40,7 +40,6 @@ $(document).ready(function () {
 
     timerWheel = setTimeout(function () {
       //4-1) 현재 애니메이트(.cnt_wrap) 중이면 함수 강제 종료
-      console.log(e);
       if ( $('html, body').is(':animated') ) return false;
 
       //4-2) delta값 구하기
@@ -75,23 +74,11 @@ $(document).ready(function () {
                   }, 700, 'easeOutCubic');
                 }
       }
-     
-
-
+    
     }, 200);
+
+
   });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -134,6 +121,14 @@ $(document).ready(function () {
 
   });
 
+  $('#cnt1 .swiper-button-prev,#cnt1 .swiper-button-next').on('click',function(){
+    $('#cnt1 .controller .slide_timer').removeClass('on');
+    setTimeout(function(){
+      $('#cnt1 .controller .slide_timer').addClass('on');
+    },1);
+  });
+
+
   /* section4 탭브라우징 제어 */
 
   //1) 초기설정 => 탭버튼 포커스 제어 추가
@@ -150,7 +145,6 @@ $(document).ready(function () {
   //키보드 제어 keydown : 오른쪽39, 왼쪽37, HOME36, END35, Enter13, Spacebar32
   $('.tab').on('keydown', function (e) {
     var key = e.keyCode;
-    console.log(key);
     switch (key) {
       case 40: //아래쪽
         $(this).attr('tabIndex', -1);

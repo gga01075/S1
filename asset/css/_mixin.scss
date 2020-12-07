@@ -58,9 +58,17 @@
     transition-delay: $value;
 }
 
+
+@mixin animation($value...){
+    -webkit-animation: $value;
+    -ms-zoom-animation: $value;
+}
+
 @mixin aniDelay($value...){
     -webkit-animation-delay: $value;
     -moz-animation-delay: $value;
     -o-animation-delay: $value;
     animation-delay: $value;
 }
+
+

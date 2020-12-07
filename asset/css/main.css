@@ -80,6 +80,20 @@
     width: 456px;
     height: 110px;
     background: #ffffff; }
+    #cnt1 .controller .slide_timer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: #eee; }
+      #cnt1 .controller .slide_timer.on {
+        animation: timer-ani 8s infinite; }
+@keyframes timer-ani {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
     #cnt1 .controller .swiper-pagination-fraction {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
@@ -512,7 +526,7 @@
           font-size: 18px;
           margin-top: 10px;
           margin-bottom: 50px; }
-        #sec45 #cnt4 #serviceTab .tabpanel ul li, #sec45 #cnt4 #serviceTab .tabpanel ul strong::before, #sec45 #cnt4 #serviceTab .tabpanel ul a {
+        #sec45 #cnt4 #serviceTab .tabpanel ul li, #sec45 #cnt4 #serviceTab .tabpanel ul li::after, #sec45 #cnt4 #serviceTab .tabpanel ul strong::before, #sec45 #cnt4 #serviceTab .tabpanel ul a {
           -webkit-transition: all 0.7s;
           -moz-transition: all 0.7s;
           -o-transition: all 0.7s;
@@ -532,6 +546,15 @@
           text-align: center;
           color: #ffffff;
           padding-top: 220px; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 380px;
+            height: 480px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            opacity: 0; }
           #sec45 #cnt4 #serviceTab .tabpanel ul li + li {
             margin-left: 40px; }
           #sec45 #cnt4 #serviceTab .tabpanel ul li strong {
@@ -559,6 +582,7 @@
             font-size: 14px;
             background: transparent;
             position: relative;
+            z-index: 10;
             overflow: hidden;
             display: none;
             opacity: 0; }
@@ -587,6 +611,8 @@
               left: -80px; }
         #sec45 #cnt4 #serviceTab .tabpanel ul li.on {
           padding-top: 140px; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li.on::after {
+            opacity: 1; }
           #sec45 #cnt4 #serviceTab .tabpanel ul li.on strong::before {
             opacity: 0; }
           #sec45 #cnt4 #serviceTab .tabpanel ul li.on a {

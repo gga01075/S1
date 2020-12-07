@@ -40,7 +40,15 @@
     }
     .controller{
         position: absolute;bottom: 270px;left: 0;z-index: 10;width: 456px;height: 110px;background: #ffffff;     
-
+        .slide_timer{
+            position: absolute;top: 0;left: 0;width: 0%;height: 100%;background:#eee;
+        &.on{animation:timer-ani 8s infinite;}
+     }
+        
+        @keyframes timer-ani{
+            0%{width:0;}
+            100%{width:100%;}
+        }
         .swiper-pagination-fraction{
             @include translateY-50;
             bottom: auto;top:50%;left: auto;right:54px;width: 120px; color: #aaa;
@@ -239,13 +247,14 @@
                 >strong{font-size: 60px;letter-spacing: -3px;}
                 >p:last-of-type{font-size: 18px;margin-top: 10px;margin-bottom: 50px;}
                 ul{ 
-                    li,strong::before,a{
+                    li,li::after,strong::before,a{
                         @include transition(all .7s);
                     }
                     li{
                         @include borderbox;
                         @include bgsize(cover);
                         float: left;position: relative;width: 400px;height: 500px;background:no-repeat center;text-align: center;color: #ffffff;padding-top: 220px;
+                        &::after{content:"";position: absolute;top: 10px;left: 10px;width: 380px;height:480px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
                         +li{margin-left: 40px;}
                         strong{
                             &::before{content:"";position: absolute;top: -30px;left: calc(50% - 20px);width: 35px;height: 1px;background: #fff;}
@@ -253,7 +262,7 @@
                         }
                         p{margin-bottom: 30px;font-weight: 300;}
                         a{
-                            display: inline-block;width: 100px;height: 100px;border: 1px solid #fff;line-height: 100px;font-size: 14px;background: transparent;position: relative;overflow: hidden;display: none;opacity: 0;
+                            display: inline-block;width: 100px;height: 100px;border: 1px solid #fff;line-height: 100px;font-size: 14px;background: transparent;position: relative;z-index: 10;overflow: hidden;display: none;opacity: 0;
                             span{position: relative;z-index: 1;}
                             &::after{
                                 @include transition(all 1s);
@@ -264,6 +273,7 @@
                         }
                     }
                     li.on{
+                        &::after{opacity: 1;}
                         padding-top: 140px;
                         strong::before{opacity: 0;}
                         a{display: inline-block;opacity: 1;}
