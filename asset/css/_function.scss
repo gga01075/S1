@@ -1,0 +1,10 @@
+@function vw-calc-pc($px, $viewport:1920){  
+    $vwSize : $px / ($viewport/100);
+    @return #{$vwSize}vw;
+}
+
+@function vw-calc1200($px){
+    $vwSize : $px / (1200 / 100);
+    @return #{$vwSize}vw;
+}
+    
