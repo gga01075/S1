@@ -34,11 +34,6 @@ $(document).ready(function(){
     });
     $(window).trigger('scroll');
   
-
-
-
-
-
     //depth1 li에 hover또는 focus이벤트
     _pcGnb.find('>ul>li').on({
         'mouseenter focusin' : function(){
@@ -47,7 +42,7 @@ $(document).ready(function(){
             _pcGnb.find('.dep1_txt').show().children('img').attr({'src':dep1src}).next().text(dep1txt);
         },
         'mouseleave focusout' : function(){
-            _pcGnb.find('.dep1_txt').show().children('img').attr({'src':''}).next().text('');
+            _pcGnb.find('.dep1_txt').hide().children('img').attr({'src':''}).next().text('');
         }
     });
 

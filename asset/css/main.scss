@@ -143,25 +143,70 @@
 
     .solution_step{
         width: 80%;position: relative;left: -100px;
-        .line{width: 100%;height: 2px;background: rgba(255, 255, 255,.5);}
+        .line{
+            height: 2px;background: rgba(255, 255, 255,.2);overflow: hidden;position: relative;
+            .glow_line{
+                position: absolute;top: 0;left: -12%;z-index: 30;
+                width: 12%;height:100%;
+                background: #ffffff; /* Old browsers */
+                background: -moz-linear-gradient(top,  #ffffff 0%, #43366d 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  #ffffff 0%,#43366d 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  #ffffff 0%,#43366d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                animation: glow-ani 7.8s  infinite;
+            }
+        }
+        @keyframes glow-ani{
+            0%{left:-12%;}
+            100%{left: 112%;}
+        }
+
         .step{
             li{
-                position: absolute;top: 20px;
-                &::before{
-                    @include radius(50%);
-                    content:"";position: absolute;top: -27px;left: 14px;width: 15px;height: 15px;background: #fff;}
+                position: absolute;top: 20px;z-index: 50;width: 70px;
+                .circle{position: absolute;top: -33px;z-index: 100;width: 25px;height: 25px;}
+                .circle div{position: absolute;left: 0;right: 0;margin: 0 auto;border-radius: 50%;background: #fff;}
+                /* top, widht, height, animation */
+                .circle .c1{top: 0%;width: 100%;height: 100%;background: #fff;
+                animation: wave1 7.8s linear infinite none;}
+                .circle .c2{top: 0;width:100%;height:100%;}
+
+                /* .c1 */
+                @keyframes wave1{
+                0%{transform: scale(0);opacity: 1;}
+                10%{transform: scale(3);opacity: 0;}
+                100%{transform: scale(3);opacity: 0;}
+                }
             }
-            li:nth-of-type(1){left: 25%;}
-            li:nth-of-type(2){left: 45%;}
-            li:nth-of-type(3){left: 62%;}
-            li:nth-of-type(4){left: 80%;}
-            li:nth-of-type(1)::before{left: 14px;}
-            li:nth-of-type(2)::before{left: 8px;}
-            li:nth-of-type(3)::before{left:10px;}
-            li:nth-of-type(4)::before{left:21px; }
+            li:nth-of-type(1){
+                left: 25%;
+                .circle{
+                    left:8px;
+                    .c1{@include aniDelay(1s);}
+                } 
+            }
+            li:nth-of-type(2){
+                left: 45%;
+                .circle{
+                    left: 3px;
+                    .c1{@include aniDelay(1.5s);}
+                } 
+            }
+            li:nth-of-type(3){
+                left: 62%;
+                .circle{
+                    left: 3px;
+                    .c1{@include aniDelay(2s);}
+                }
+            }
+            li:nth-of-type(4){
+                left: 80%;
+                .circle{
+                    left: 14px;
+                    .c1{@include aniDelay(2.7s);}
+                } 
+            }
         }
     }
-
     .btn_more{margin: 160px 0 0 50px;}
 }
 
@@ -289,43 +334,3 @@
     }
 }
 
-#footer{
-    height: 37vh;background: #15161a;position: relative;z-index: 100;color: #a199b0;
-    padding-left: 300px;font-weight: 300;font-size: 14px;
-
-    &::after{content:"";display: block;clear: both;}
-    .footer_logo{
-        @include bgsize(cover);@include borderbox;
-        width: 699px;height: 144px;background:url("../images/layout/ftlogo_bg.png")no-repeat center;position: relative;top: -80px;padding: 50px 0 0 300px;margin-left: -300px;
-        img{width: 58px;}
-        span{display: inline-block;padding-top: 8px;color: #9c80b6;
-            font-size: 30px;font-weight: 600;font-style: italic;}
-    }
-    .info,.footer_right{float: left; position: relative;top: -40px;}
-    .info{
-        margin-right: 150px;
-        ul li{
-            margin-bottom: 20px;
-            span{
-                display: inline-block;margin-right: 20px;position: relative;
-                &:nth-of-type(2)::before{content:"";position: absolute;left: -12px;top: 2px;width: 1px;height: 13px;background: #a199b0;}
-            }
-        }
-        p{margin-top: 60px;}
-    }
-    .footer_right{
-        width: 650px;
-        .footer_list{
-            margin-bottom: 90px;
-            >li{
-                float: left;margin-right: 45px;
-                &:nth-of-type(n+6){margin-top: 20px;}
-            }
-        }
-        .family{
-            ul{display: none;}
-        }
-    }
-    
-
-}

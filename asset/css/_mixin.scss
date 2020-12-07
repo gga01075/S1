@@ -57,3 +57,10 @@
     -o-transition-delay: $value;
     transition-delay: $value;
 }
+
+@mixin aniDelay($value...){
+    -webkit-animation-delay: $value;
+    -moz-animation-delay: $value;
+    -o-animation-delay: $value;
+    animation-delay: $value;
+}

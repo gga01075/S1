@@ -318,39 +318,107 @@
     position: relative;
     left: -100px; }
     #cnt3 .solution_step .line {
-      width: 100%;
       height: 2px;
-      background: rgba(255, 255, 255, 0.5); }
+      background: rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      position: relative; }
+      #cnt3 .solution_step .line .glow_line {
+        position: absolute;
+        top: 0;
+        left: -12%;
+        z-index: 30;
+        width: 12%;
+        height: 100%;
+        background: #ffffff;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #ffffff 0%, #43366d 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #ffffff 0%, #43366d 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #ffffff 0%, #43366d 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        animation: glow-ani 7.8s  infinite; }
+@keyframes glow-ani {
+  0% {
+    left: -12%; }
+  100% {
+    left: 112%; } }
     #cnt3 .solution_step .step li {
       position: absolute;
-      top: 20px; }
-      #cnt3 .solution_step .step li::before {
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        content: "";
+      top: 20px;
+      z-index: 50;
+      width: 70px;
+      /* top, widht, height, animation */
+      /* .c1 */ }
+      #cnt3 .solution_step .step li .circle {
         position: absolute;
-        top: -27px;
-        left: 14px;
-        width: 15px;
-        height: 15px;
+        top: -33px;
+        z-index: 100;
+        width: 25px;
+        height: 25px; }
+      #cnt3 .solution_step .step li .circle div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 50%;
         background: #fff; }
+      #cnt3 .solution_step .step li .circle .c1 {
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: wave1 7.8s linear infinite none; }
+      #cnt3 .solution_step .step li .circle .c2 {
+        top: 0;
+        width: 100%;
+        height: 100%; }
+@keyframes wave1 {
+  0% {
+    transform: scale(0);
+    opacity: 1; }
+  10% {
+    transform: scale(3);
+    opacity: 0; }
+  100% {
+    transform: scale(3);
+    opacity: 0; } }
     #cnt3 .solution_step .step li:nth-of-type(1) {
       left: 25%; }
+      #cnt3 .solution_step .step li:nth-of-type(1) .circle {
+        left: 8px; }
+        #cnt3 .solution_step .step li:nth-of-type(1) .circle .c1 {
+          -webkit-animation-delay: 1s;
+          -moz-animation-delay: 1s;
+          -o-animation-delay: 1s;
+          animation-delay: 1s; }
     #cnt3 .solution_step .step li:nth-of-type(2) {
       left: 45%; }
+      #cnt3 .solution_step .step li:nth-of-type(2) .circle {
+        left: 3px; }
+        #cnt3 .solution_step .step li:nth-of-type(2) .circle .c1 {
+          -webkit-animation-delay: 1.5s;
+          -moz-animation-delay: 1.5s;
+          -o-animation-delay: 1.5s;
+          animation-delay: 1.5s; }
     #cnt3 .solution_step .step li:nth-of-type(3) {
       left: 62%; }
+      #cnt3 .solution_step .step li:nth-of-type(3) .circle {
+        left: 3px; }
+        #cnt3 .solution_step .step li:nth-of-type(3) .circle .c1 {
+          -webkit-animation-delay: 2s;
+          -moz-animation-delay: 2s;
+          -o-animation-delay: 2s;
+          animation-delay: 2s; }
     #cnt3 .solution_step .step li:nth-of-type(4) {
       left: 80%; }
-    #cnt3 .solution_step .step li:nth-of-type(1)::before {
-      left: 14px; }
-    #cnt3 .solution_step .step li:nth-of-type(2)::before {
-      left: 8px; }
-    #cnt3 .solution_step .step li:nth-of-type(3)::before {
-      left: 10px; }
-    #cnt3 .solution_step .step li:nth-of-type(4)::before {
-      left: 21px; }
+      #cnt3 .solution_step .step li:nth-of-type(4) .circle {
+        left: 14px; }
+        #cnt3 .solution_step .step li:nth-of-type(4) .circle .c1 {
+          -webkit-animation-delay: 2.7s;
+          -moz-animation-delay: 2.7s;
+          -o-animation-delay: 2.7s;
+          animation-delay: 2.7s; }
   #cnt3 .btn_more {
     margin: 160px 0 0 50px; }
 
@@ -658,75 +726,5 @@
         width: 32px;
         height: 27px;
         margin-top: 2px; }
-
-#footer {
-  height: 37vh;
-  background: #15161a;
-  position: relative;
-  z-index: 100;
-  color: #a199b0;
-  padding-left: 300px;
-  font-weight: 300;
-  font-size: 14px; }
-  #footer::after {
-    content: "";
-    display: block;
-    clear: both; }
-  #footer .footer_logo {
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    background-size: cover !important;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 699px;
-    height: 144px;
-    background: url("../images/layout/ftlogo_bg.png") no-repeat center;
-    position: relative;
-    top: -80px;
-    padding: 50px 0 0 300px;
-    margin-left: -300px; }
-    #footer .footer_logo img {
-      width: 58px; }
-    #footer .footer_logo span {
-      display: inline-block;
-      padding-top: 8px;
-      color: #9c80b6;
-      font-size: 30px;
-      font-weight: 600;
-      font-style: italic; }
-  #footer .info, #footer .footer_right {
-    float: left;
-    position: relative;
-    top: -40px; }
-  #footer .info {
-    margin-right: 150px; }
-    #footer .info ul li {
-      margin-bottom: 20px; }
-      #footer .info ul li span {
-        display: inline-block;
-        margin-right: 20px;
-        position: relative; }
-        #footer .info ul li span:nth-of-type(2)::before {
-          content: "";
-          position: absolute;
-          left: -12px;
-          top: 2px;
-          width: 1px;
-          height: 13px;
-          background: #a199b0; }
-    #footer .info p {
-      margin-top: 60px; }
-  #footer .footer_right {
-    width: 650px; }
-    #footer .footer_right .footer_list {
-      margin-bottom: 90px; }
-      #footer .footer_right .footer_list > li {
-        float: left;
-        margin-right: 45px; }
-        #footer .footer_right .footer_list > li:nth-of-type(n+6) {
-          margin-top: 20px; }
-    #footer .footer_right .family ul {
-      display: none; }
 
 /*# sourceMappingURL=main.css.map */

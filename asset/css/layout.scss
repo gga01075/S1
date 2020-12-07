@@ -52,12 +52,11 @@
             .dep1_txt{
                 @include translateY-50;
                 position: absolute;top: 45%;left: 13.75vw;
-                img{float: left;width: vw-calc-pc(55);}
+                img{float: left;width:vw-calc-pc(55);height:vw-calc-pc(50);}
                 p{float: left;font-weight: 700;font-size: vw-calc-pc(40);padding-top: 10px;letter-spacing: -1.3px;}
             }
         }  
     }
-
 }
 #pcHeader.on{
     background: #060415;
@@ -65,6 +64,47 @@
 
 #mHeader{
  display: none;
+}
+
+#footer{
+    height: 37vh;background: #15161a;position: relative;z-index: 100;color: #a199b0;
+    padding-left: 300px;font-weight: 300;font-size: 14px;
+
+    &::after{content:"";display: block;clear: both;}
+    .footer_logo{
+        @include bgsize(cover);@include borderbox;
+        width: 699px;height: 144px;background:url("../images/layout/ftlogo_bg.png")no-repeat center;position: relative;top: -80px;padding: 50px 0 0 300px;margin-left: -300px;
+        img{width: 58px;}
+        span{display: inline-block;padding-top: 8px;color: #9c80b6;
+            font-size: 30px;font-weight: 600;font-style: italic;}
+    }
+    .info,.footer_right{float: left; position: relative;top: -40px;}
+    .info{
+        margin-right: 150px;
+        ul li{
+            margin-bottom: 20px;
+            span{
+                display: inline-block;margin-right: 20px;position: relative;
+                &:nth-of-type(2)::before{content:"";position: absolute;left: -12px;top: 2px;width: 1px;height: 13px;background: #a199b0;}
+            }
+        }
+        p{margin-top: 60px;}
+    }
+    .footer_right{
+        width: 650px;
+        .footer_list{
+            margin-bottom: 90px;
+            >li{
+                float: left;margin-right: 45px;
+                &:nth-of-type(n+6){margin-top: 20px;}
+            }
+        }
+        .family{
+            ul{display: none;}
+        }
+    }
+    
+
 }
 
 @media screen and (max-width:1200px){
