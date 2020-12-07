@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var _win = $(window);
-  var _cnt = $('#content .cnt');
+  var _cnt = $('#content .tg');
   var cntPosY; //섹션의 offset().top 값을 배열에 저장
   var tgIdx = 0; //로딩시 보여지는 섹션의 인덱스 번호
   var cntPosY; //섹션의 offset().top 값을 배열에 저장
@@ -8,6 +8,7 @@ $(document).ready(function () {
   var total = _cnt.length; //섹션의 전체 개수
   var timerResize = 0; //resize이벤트의 실행문 누적을 방지 하기위해 
   var timerWheel = 0; //mousewheel 이벤트의 실행문 누적을 방지
+  var sec45_top =  $('#sec45').offset().top;
 
   //1) resize이벤트 cntPosY배열에 섹션의 offset().top 저장 + 하단푸터인식
   _win.on('resize', function () {
@@ -34,10 +35,12 @@ $(document).ready(function () {
 
   //마우스 휠 이벤트
   _cnt.on('mousewheel DOMMouseScroll', function (e) {
+    var _this = $(this);
     clearTimeout(timerWheel);
 
     timerWheel = setTimeout(function () {
       //4-1) 현재 애니메이트(.cnt_wrap) 중이면 함수 강제 종료
+      console.log(e);
       if ( $('html, body').is(':animated') ) return false;
 
       //4-2) delta값 구하기
@@ -47,18 +50,34 @@ $(document).ready(function () {
       //console.log(delta);
 
       //4-3) if : 휠내리기-음수-오른쪽,  else if : 휠올리기-양수-왼쪽 => tgIdx
-      if (delta < 0 && tgIdx < total - 1) {
-        tgIdx++;
-        console.log(delta, tgIdx, '휠내리기');
-      } else if (delta > 0 && tgIdx > 0) {
-        tgIdx--;
-        console.log(delta, tgIdx, '휠올리기');
-      }
+      if (delta < 0 && tgIdx < total - 1 ) {  //마우스휠을 내렸을 때 
+        if(tgIdx === 3){
+          $(window).scrollTop(sec45_top);
+          $('#sec45').stop().animate({left:'-100%'});
+        }else{
+          tgIdx++;
+          $('html, body').stop().animate({
+            scrollTop: cntPosY[tgIdx]
+          }, 700, 'easeOutCubic');
+        }
+/*         console.log(_this);
+        console.log(delta, tgIdx, '휠내리기'); */
 
-      //4-4) .cnt_wrap 애니메이션
-      $('html, body').stop().animate({
-        scrollTop: cntPosY[tgIdx]
-      }, 700, 'easeOutCubic');
+      
+      } else if (delta > 0 && tgIdx > 0) {    //마우스휠을 올렸을 때 
+          if(tgIdx === 3){                  
+                  $(window).scrollTop(sec45_top);
+                  $('#sec45').stop().animate({left:'0%'});
+                }else{
+                  tgIdx--;
+                  $('html, body').stop().animate({
+                    scrollTop: cntPosY[tgIdx]
+                  }, 700, 'easeOutCubic');
+                }
+      }
+     
+
+
     }, 200);
   });
 

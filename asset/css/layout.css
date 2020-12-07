@@ -11,7 +11,7 @@
     position: absolute;
     top: 20px;
     left: 100px;
-    z-index: 10; }
+    z-index: 500; }
     .header .logo a {
       display: block;
       width: 120px; }
@@ -24,7 +24,8 @@
   .header .util {
     position: absolute;
     top: 30px;
-    right: 80px; }
+    right: 80px;
+    z-index: 500; }
     .header .util ul li {
       float: left; }
       .header .util ul li + li {
@@ -41,15 +42,21 @@
     padding-top: 30px;
     width: 100%; }
     #pcHeader #gnb a {
-      display: block; }
-    #pcHeader #gnb > ul > li {
-      display: inline-block;
-      margin-right: 60px;
+      display: block;
       position: relative; }
-      #pcHeader #gnb > ul > li > a {
-        font-size: 18px;
-        font-weight: 500;
-        width: 120px; }
+    #pcHeader #gnb > ul {
+      position: relative;
+      z-index: 100;
+      font-size: 0; }
+      #pcHeader #gnb > ul > li {
+        display: inline-block;
+        padding-right: 60px;
+        position: relative;
+        padding-bottom: 62px; }
+        #pcHeader #gnb > ul > li > a {
+          font-size: 18px;
+          font-weight: 500;
+          width: 120px; }
     #pcHeader #gnb .dep2 {
       position: absolute;
       top: 80px;
@@ -58,11 +65,18 @@
       height: 205px;
       z-index: 60;
       padding: 30px 20px;
-      border-top: 2px solid #531984;
-      border-left: 2px solid #531984; }
+      border-left: 2px solid #531984;
+      font-size: 16px; }
+      #pcHeader #gnb .dep2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 2px;
+        background: #531984; }
       #pcHeader #gnb .dep2 > li {
-        margin-bottom: 25px;
-        width: 140%; }
+        margin-bottom: 25px; }
         #pcHeader #gnb .dep2 > li > a {
           text-align: left; }
       #pcHeader #gnb .dep2.w150 {

@@ -144,7 +144,7 @@
     position: fixed;
     top: 23%;
     left: 17.5%;
-    z-index: 50;
+    z-index: 0;
     width: 10%;
     height: 80vh; }
     #cnt2 .state_bar .round {
@@ -422,247 +422,259 @@
   #cnt3 .btn_more {
     margin: 160px 0 0 50px; }
 
-#cnt4 {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.sec45_wrap {
+  width: 100%;
+  overflow: hidden; }
+
+#sec45 {
+  width: 200%;
   height: 100vh;
   position: relative;
-  z-index: 100;
-  background: #fff;
-  color: #000;
-  padding: 120px 0 0 80px; }
-  #cnt4 #serviceTab {
+  z-index: 100; }
+  #sec45::after {
+    content: "";
+    display: block;
+    clear: both; }
+  #sec45 section {
+    float: left;
+    position: relative;
+    z-index: 100;
+    width: 50%;
+    height: 100vh; }
+  #sec45 #cnt4 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    height: 100%;
-    position: relative; }
-    #cnt4 #serviceTab .tablist {
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -o-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-      position: absolute;
-      left: 100px;
-      top: 50%;
-      width: 140px;
-      height: 180px; }
-      #cnt4 #serviceTab .tablist .tab {
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        transition: all 0.3s;
-        font-size: 18px;
-        margin-bottom: 40px;
-        cursor: pointer;
-        overflow: hidden;
-        text-indent: -16px; }
-        #cnt4 #serviceTab .tablist .tab span {
-          position: relative;
-          top: -2px;
-          margin-right: 4px;
-          font-size: 14px;
-          font-weight: 700;
-          color: #4d3074; }
-        #cnt4 #serviceTab .tablist .tab.active {
-          text-indent: 0px;
-          font-weight: 700; }
-    #cnt4 #serviceTab .tabpanel {
-      display: none;
-      position: absolute;
-      left: 250px;
-      top: 0;
-      width: 1480px;
-      height: 100%; }
-      #cnt4 #serviceTab .tabpanel.active {
-        display: block; }
-      #cnt4 #serviceTab .tabpanel > p:first-of-type {
-        font-size: 30px;
-        color: #4d3074;
-        font-weight: 600;
-        letter-spacing: 2px;
-        margin-bottom: 10px; }
-        #cnt4 #serviceTab .tabpanel > p:first-of-type span {
-          font-size: 46px;
-          font-weight: 600;
-          display: inline-block;
-          margin-left: 5px; }
-      #cnt4 #serviceTab .tabpanel > strong {
-        font-size: 60px;
-        letter-spacing: -3px; }
-      #cnt4 #serviceTab .tabpanel > p:last-of-type {
-        font-size: 18px;
-        margin-top: 10px;
-        margin-bottom: 50px; }
-      #cnt4 #serviceTab .tabpanel ul li, #cnt4 #serviceTab .tabpanel ul strong::before, #cnt4 #serviceTab .tabpanel ul a {
-        -webkit-transition: all 0.7s;
-        -moz-transition: all 0.7s;
-        -o-transition: all 0.7s;
-        transition: all 0.7s; }
-      #cnt4 #serviceTab .tabpanel ul li {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-background-size: cover !important;
-        -moz-background-size: cover !important;
-        background-size: cover !important;
-        float: left;
-        position: relative;
-        width: 400px;
-        height: 500px;
-        background: no-repeat center;
-        text-align: center;
-        color: #ffffff;
-        padding-top: 220px; }
-        #cnt4 #serviceTab .tabpanel ul li + li {
-          margin-left: 40px; }
-        #cnt4 #serviceTab .tabpanel ul li strong {
-          display: inline-block;
-          font-size: 24px;
-          margin-bottom: 20px;
-          position: relative; }
-          #cnt4 #serviceTab .tabpanel ul li strong::before {
-            content: "";
-            position: absolute;
-            top: -30px;
-            left: calc(50% - 20px);
-            width: 35px;
-            height: 1px;
-            background: #fff; }
-        #cnt4 #serviceTab .tabpanel ul li p {
-          margin-bottom: 30px;
-          font-weight: 300; }
-        #cnt4 #serviceTab .tabpanel ul li a {
-          display: inline-block;
-          width: 100px;
-          height: 100px;
-          border: 1px solid #fff;
-          line-height: 100px;
-          font-size: 14px;
-          background: transparent;
-          position: relative;
+    background: #fff;
+    color: #000;
+    padding: 120px 0 0 80px; }
+    #sec45 #cnt4 #serviceTab {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100%;
+      position: relative; }
+      #sec45 #cnt4 #serviceTab .tablist {
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: absolute;
+        left: 100px;
+        top: 50%;
+        width: 140px;
+        height: 180px; }
+        #sec45 #cnt4 #serviceTab .tablist .tab {
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+          font-size: 18px;
+          margin-bottom: 40px;
+          cursor: pointer;
           overflow: hidden;
-          display: none;
-          opacity: 0; }
-          #cnt4 #serviceTab .tabpanel ul li a span {
+          text-indent: -16px; }
+          #sec45 #cnt4 #serviceTab .tablist .tab span {
             position: relative;
-            z-index: 1; }
-          #cnt4 #serviceTab .tabpanel ul li a::after {
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-            -webkit-transform: skewX(-45deg);
-            -moz-transform: skewX(-45deg);
-            -o-transform: skewX(-45deg);
-            -ms-transform: skewX(-45deg);
-            transform: skewX(-45deg);
-            content: "";
-            width: 250%;
-            height: 250%;
-            position: absolute;
-            top: -170px;
-            left: -170px;
-            background: #4d3074; }
-          #cnt4 #serviceTab .tabpanel ul li a:hover::after, #cnt4 #serviceTab .tabpanel ul li a:focus::after {
-            top: -80px;
-            left: -80px; }
-      #cnt4 #serviceTab .tabpanel ul li.on {
-        padding-top: 140px; }
-        #cnt4 #serviceTab .tabpanel ul li.on strong::before {
-          opacity: 0; }
-        #cnt4 #serviceTab .tabpanel ul li.on a {
-          display: inline-block;
-          opacity: 1; }
-    #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(1) {
-      background-image: url("../images/main/sec4_solution_home1.jpg"); }
-    #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(2) {
-      background-image: url("../images/main/sec4_solution_home2.jpg"); }
-    #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(3) {
-      background-image: url("../images/main/sec4_solution_home3.jpg"); }
-    #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(1) {
-      background-image: url("../images/main/sec4_solution_store1.jpg"); }
-    #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(2) {
-      background-image: url("../images/main/sec4_solution_store2.jpg"); }
-    #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(3) {
-      background-image: url("../images/main/sec4_solution_store3.jpg"); }
-    #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(1) {
-      background-image: url("../images/main/sec4_solution_company1.jpg"); }
-    #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(2) {
-      background-image: url("../images/main/sec4_solution_company2.jpg"); }
-    #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(3) {
-      background-image: url("../images/main/sec4_solution_company3.jpg"); }
-
-#cnt5 {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  background-size: cover !important;
-  position: relative;
-  z-index: 100;
-  height: 100vh;
-  background: url("../images/main/sec5_bg.jpg") no-repeat center;
-  padding: 120px 0 0 80px;
-  text-align: center; }
-  #cnt5 h2 {
+            top: -2px;
+            margin-right: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #4d3074; }
+          #sec45 #cnt4 #serviceTab .tablist .tab.active {
+            text-indent: 0px;
+            font-weight: 700; }
+      #sec45 #cnt4 #serviceTab .tabpanel {
+        display: none;
+        position: absolute;
+        left: 250px;
+        top: 0;
+        width: 1480px;
+        height: 100%; }
+        #sec45 #cnt4 #serviceTab .tabpanel.active {
+          display: block; }
+        #sec45 #cnt4 #serviceTab .tabpanel > p:first-of-type {
+          font-size: 30px;
+          color: #4d3074;
+          font-weight: 600;
+          letter-spacing: 2px;
+          margin-bottom: 10px; }
+          #sec45 #cnt4 #serviceTab .tabpanel > p:first-of-type span {
+            font-size: 46px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 5px; }
+        #sec45 #cnt4 #serviceTab .tabpanel > strong {
+          font-size: 60px;
+          letter-spacing: -3px; }
+        #sec45 #cnt4 #serviceTab .tabpanel > p:last-of-type {
+          font-size: 18px;
+          margin-top: 10px;
+          margin-bottom: 50px; }
+        #sec45 #cnt4 #serviceTab .tabpanel ul li, #sec45 #cnt4 #serviceTab .tabpanel ul strong::before, #sec45 #cnt4 #serviceTab .tabpanel ul a {
+          -webkit-transition: all 0.7s;
+          -moz-transition: all 0.7s;
+          -o-transition: all 0.7s;
+          transition: all 0.7s; }
+        #sec45 #cnt4 #serviceTab .tabpanel ul li {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-background-size: cover !important;
+          -moz-background-size: cover !important;
+          background-size: cover !important;
+          float: left;
+          position: relative;
+          width: 400px;
+          height: 500px;
+          background: no-repeat center;
+          text-align: center;
+          color: #ffffff;
+          padding-top: 220px; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li + li {
+            margin-left: 40px; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li strong {
+            display: inline-block;
+            font-size: 24px;
+            margin-bottom: 20px;
+            position: relative; }
+            #sec45 #cnt4 #serviceTab .tabpanel ul li strong::before {
+              content: "";
+              position: absolute;
+              top: -30px;
+              left: calc(50% - 20px);
+              width: 35px;
+              height: 1px;
+              background: #fff; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li p {
+            margin-bottom: 30px;
+            font-weight: 300; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li a {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #fff;
+            line-height: 100px;
+            font-size: 14px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            display: none;
+            opacity: 0; }
+            #sec45 #cnt4 #serviceTab .tabpanel ul li a span {
+              position: relative;
+              z-index: 1; }
+            #sec45 #cnt4 #serviceTab .tabpanel ul li a::after {
+              -webkit-transition: all 1s;
+              -moz-transition: all 1s;
+              -o-transition: all 1s;
+              transition: all 1s;
+              -webkit-transform: skewX(-45deg);
+              -moz-transform: skewX(-45deg);
+              -o-transform: skewX(-45deg);
+              -ms-transform: skewX(-45deg);
+              transform: skewX(-45deg);
+              content: "";
+              width: 250%;
+              height: 250%;
+              position: absolute;
+              top: -170px;
+              left: -170px;
+              background: #4d3074; }
+            #sec45 #cnt4 #serviceTab .tabpanel ul li a:hover::after, #sec45 #cnt4 #serviceTab .tabpanel ul li a:focus::after {
+              top: -80px;
+              left: -80px; }
+        #sec45 #cnt4 #serviceTab .tabpanel ul li.on {
+          padding-top: 140px; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li.on strong::before {
+            opacity: 0; }
+          #sec45 #cnt4 #serviceTab .tabpanel ul li.on a {
+            display: inline-block;
+            opacity: 1; }
+      #sec45 #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(1) {
+        background-image: url("../images/main/sec4_solution_home1.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(2) {
+        background-image: url("../images/main/sec4_solution_home2.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel1 ul li:nth-of-type(3) {
+        background-image: url("../images/main/sec4_solution_home3.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(1) {
+        background-image: url("../images/main/sec4_solution_store1.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(2) {
+        background-image: url("../images/main/sec4_solution_store2.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel2 ul li:nth-of-type(3) {
+        background-image: url("../images/main/sec4_solution_store3.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(1) {
+        background-image: url("../images/main/sec4_solution_company1.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(2) {
+        background-image: url("../images/main/sec4_solution_company2.jpg"); }
+      #sec45 #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(3) {
+        background-image: url("../images/main/sec4_solution_company3.jpg"); }
+  #sec45 #cnt5 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
     background-size: cover !important;
-    display: inline-block;
-    width: 382px;
-    height: 138px;
-    background: url("../images/main/cles_txt.png") no-repeat center;
-    position: relative;
-    top: 90px; }
-  #cnt5 > p:first-of-type {
-    position: relative;
-    top: -100px;
-    font-size: 35px;
-    font-weight: 700; }
-  #cnt5 > p:last-of-type {
-    font-size: 20px;
-    line-height: 28px;
-    margin-top: 70px; }
-  #cnt5 ul {
+    background: url("../images/main/sec5_bg.jpg") no-repeat center;
+    padding: 120px 0 0 80px;
     text-align: center; }
-    #cnt5 ul li {
-      position: relative;
-      display: inline-block;
-      width: 151px;
-      height: 135px;
-      margin: 60px 50px 80px;
+    #sec45 #cnt5 h2 {
       -webkit-background-size: cover !important;
       -moz-background-size: cover !important;
-      background-size: cover !important; }
-      #cnt5 ul li::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("../images/main/cles_listbox.svg") no-repeat center;
-        opacity: 0.7; }
-      #cnt5 ul li::after {
-        content: "";
-        position: absolute;
-        right: 28px;
-        bottom: 16px;
-        width: 50px;
-        height: 1px;
-        background: #fff; }
-      #cnt5 ul li span {
-        position: absolute;
-        bottom: 40px;
-        right: 0;
-        font-size: 20px; }
-  #cnt5 > a {
-    display: inline-block;
-    text-align: left; }
+      background-size: cover !important;
+      display: inline-block;
+      width: 382px;
+      height: 138px;
+      background: url("../images/main/cles_txt.png") no-repeat center;
+      position: relative;
+      top: 90px; }
+    #sec45 #cnt5 > p:first-of-type {
+      position: relative;
+      top: -100px;
+      font-size: 35px;
+      font-weight: 700; }
+    #sec45 #cnt5 > p:last-of-type {
+      font-size: 20px;
+      line-height: 28px;
+      margin-top: 70px; }
+    #sec45 #cnt5 ul {
+      text-align: center; }
+      #sec45 #cnt5 ul li {
+        position: relative;
+        display: inline-block;
+        width: 151px;
+        height: 135px;
+        margin: 60px 50px 80px;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        background-size: cover !important; }
+        #sec45 #cnt5 ul li::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url("../images/main/cles_listbox.svg") no-repeat center;
+          opacity: 0.7; }
+        #sec45 #cnt5 ul li::after {
+          content: "";
+          position: absolute;
+          right: 28px;
+          bottom: 16px;
+          width: 50px;
+          height: 1px;
+          background: #fff; }
+        #sec45 #cnt5 ul li span {
+          position: absolute;
+          bottom: 40px;
+          right: 0;
+          font-size: 20px; }
+    #sec45 #cnt5 > a {
+      display: inline-block;
+      text-align: left; }
 
 #cnt6 {
   -webkit-box-sizing: border-box;
