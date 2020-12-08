@@ -741,6 +741,9 @@
       padding: 12px 36px 12px 14px;
       font-size: 14px;
       border-radius: 6px 6px 0 0; }
+    #cnt6 #map .overlay_info a strong {
+      background: url("../images/main/company_s1.png") no-repeat;
+      padding-left: 27px; }
     #cnt6 #map .overlay_info .desc {
       padding: 14px;
       position: relative;
