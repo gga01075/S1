@@ -718,16 +718,14 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top: 80px; }
-    #cnt6 #map iframe {
-      border: none;
-      width: 100%;
-      height: 100%; }
+    padding-top: 80px;
+    /*         iframe{border:none;width: 100%;height: 100%;} */ }
     #cnt6 #map .overlay_info {
       border-radius: 6px;
       margin-bottom: 12px;
       float: left;
       position: relative;
+      z-index: 10;
       border: 1px solid #ccc;
       border-bottom: 2px solid #ddd;
       background-color: #fff; }
@@ -743,9 +741,6 @@
       padding: 12px 36px 12px 14px;
       font-size: 14px;
       border-radius: 6px 6px 0 0; }
-    #cnt6 #map .overlay_info a strong {
-      background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/place_icon.png) no-repeat;
-      padding-left: 27px; }
     #cnt6 #map .overlay_info .desc {
       padding: 14px;
       position: relative;
