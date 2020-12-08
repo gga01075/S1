@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title> 에스원 </title>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
     <link rel="apple-touch-icon" href="asset/images/common/favicon.ico"><!-- size : 114px -->
     <link rel="shortcut icon" href="asset/images/common/favicon.ico"><!-- size : 72px, 파비콘까지 자동으로 적용된다 -->
     <link rel="stylesheet" href="asset/css/swiper-bundle.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="asset/css/main.css">
     <script src="asset/js/jquery-1.12.4.min.js"></script>
     <script src="asset/js/swiper.min.js"></script>
+    <script defer type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26d09b8c72ac42266fa1c594bbe0255b"></script>
     <script src="asset/js/jquery.easing.min.js"></script>
     <script src="asset/js/common.js"></script>
     <script src="asset/js/main.js"></script>
@@ -347,8 +348,20 @@
         <section id="cnt6" class="cnt tg">
             <h2 class="blind_b">에스원 위치 및 연락처</h2>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.773759619086!2d126.97063171558828!3d37.560393732237074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca38af22de12d%3A0xbc4760736796cbae!2z7JeQ7Iqk7JuQIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1607261852668!5m2!1sko!2skr" allowfullscreen="" aria-hidden="false" tabindex="0" title="에스원 본사 맵"></iframe>
+                <div id="map"></div>
+<!--                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.773759619086!2d126.97063171558828!3d37.560393732237074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca38af22de12d%3A0xbc4760736796cbae!2z7JeQ7Iqk7JuQIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1607261852668!5m2!1sko!2skr" allowfullscreen="" aria-hidden="false" tabindex="0" title="에스원 본사 맵"></iframe> -->
             </div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26d09b8c72ac42266fa1c594bbe0255b"></script>
+            <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = { 
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
+
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+</script>
             <div class="contact">
                 <h3>CONTACT</h3>
                 <ul>
