@@ -713,13 +713,13 @@
   #cnt6 > div {
     float: left;
     height: 100%; }
-  #cnt6 .map {
+  #cnt6 #map {
     width: 66%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-top: 80px; }
-    #cnt6 .map iframe {
+    #cnt6 #map iframe {
       border: none;
       width: 100%;
       height: 100%; }

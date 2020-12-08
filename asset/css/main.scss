@@ -323,7 +323,7 @@
     @include borderbox;
     height: 63vh;position: relative;z-index: 100;background: #ffffff;
     >div{float: left;height: 100%;}
-    .map{
+    #map{
         width: 66%;@include borderbox;padding-top: 80px;
         iframe{border:none;width: 100%;height: 100%;}
     }
