@@ -254,7 +254,7 @@
                         @include borderbox;
                         @include bgsize(cover);
                         float: left;position: relative;width: 400px;height: 500px;background:no-repeat center;text-align: center;color: #ffffff;padding-top: 220px;
-                        &::after{content:"";position: absolute;top: 10px;left: 10px;width: 380px;height:480px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
+                        &::after{content:"";position: absolute;top: 8px;left: 8px;width: 380px;height:480px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
                         +li{margin-left: 40px;}
                         strong{
                             &::before{content:"";position: absolute;top: -30px;left: calc(50% - 20px);width: 35px;height: 1px;background: #fff;}

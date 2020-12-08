@@ -24,10 +24,10 @@
  
 #pcHeader{
     @include transition(all .3s);
-    #gnb{text-align: center;padding-top: 30px;width: 100%;
+    #pcGnb{text-align: center;padding-top: 30px;width: 100%;
         a{display: block;position: relative;}
         >ul{
-            position: relative;z-index: 100;font-size: 0;
+            position: relative;z-index: 100;font-size: 0;width: 540px;margin: 0 auto;
             >li{ 
                 display: inline-block;padding-right: 60px;position: relative;padding-bottom: 62px;
                 >a{font-size: 18px;font-weight: 500;width: 120px;}
@@ -43,7 +43,7 @@
             }
         &.w150{
             width: 160%;
-            li{width: 45%;}
+            li{width: 30%;}
             li:nth-of-type(7){position: absolute;top: 30px;left: 130px;}
             li:nth-of-type(8){position: absolute;top: 70px;left: 130px;}
         }

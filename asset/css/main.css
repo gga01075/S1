@@ -549,8 +549,8 @@
           #sec45 #cnt4 #serviceTab .tabpanel ul li::after {
             content: "";
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 8px;
+            left: 8px;
             width: 380px;
             height: 480px;
             border: 1px solid rgba(255, 255, 255, 0.6);

@@ -37,27 +37,29 @@
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
-  #pcHeader #gnb {
+  #pcHeader #pcGnb {
     text-align: center;
     padding-top: 30px;
     width: 100%; }
-    #pcHeader #gnb a {
+    #pcHeader #pcGnb a {
       display: block;
       position: relative; }
-    #pcHeader #gnb > ul {
+    #pcHeader #pcGnb > ul {
       position: relative;
       z-index: 100;
-      font-size: 0; }
-      #pcHeader #gnb > ul > li {
+      font-size: 0;
+      width: 540px;
+      margin: 0 auto; }
+      #pcHeader #pcGnb > ul > li {
         display: inline-block;
         padding-right: 60px;
         position: relative;
         padding-bottom: 62px; }
-        #pcHeader #gnb > ul > li > a {
+        #pcHeader #pcGnb > ul > li > a {
           font-size: 18px;
           font-weight: 500;
           width: 120px; }
-    #pcHeader #gnb .dep2 {
+    #pcHeader #pcGnb .dep2 {
       position: absolute;
       top: 80px;
       left: 10px;
@@ -67,7 +69,7 @@
       padding: 30px 20px;
       border-left: 2px solid #531984;
       font-size: 16px; }
-      #pcHeader #gnb .dep2::before {
+      #pcHeader #pcGnb .dep2::before {
         content: "";
         position: absolute;
         top: 0;
@@ -75,23 +77,23 @@
         width: 80%;
         height: 2px;
         background: #531984; }
-      #pcHeader #gnb .dep2 > li {
+      #pcHeader #pcGnb .dep2 > li {
         margin-bottom: 25px; }
-        #pcHeader #gnb .dep2 > li > a {
+        #pcHeader #pcGnb .dep2 > li > a {
           text-align: left; }
-      #pcHeader #gnb .dep2.w150 {
+      #pcHeader #pcGnb .dep2.w150 {
         width: 160%; }
-        #pcHeader #gnb .dep2.w150 li {
-          width: 45%; }
-        #pcHeader #gnb .dep2.w150 li:nth-of-type(7) {
+        #pcHeader #pcGnb .dep2.w150 li {
+          width: 30%; }
+        #pcHeader #pcGnb .dep2.w150 li:nth-of-type(7) {
           position: absolute;
           top: 30px;
           left: 130px; }
-        #pcHeader #gnb .dep2.w150 li:nth-of-type(8) {
+        #pcHeader #pcGnb .dep2.w150 li:nth-of-type(8) {
           position: absolute;
           top: 70px;
           left: 130px; }
-    #pcHeader #gnb .dep2_bg {
+    #pcHeader #pcGnb .dep2_bg {
       position: absolute;
       top: 80px;
       left: 0;
@@ -100,7 +102,7 @@
       opacity: 0.95;
       height: 319px;
       background: url("../images/layout/menu_open_bg.png") no-repeat center/cover; }
-      #pcHeader #gnb .dep2_bg .dep1_txt {
+      #pcHeader #pcGnb .dep2_bg .dep1_txt {
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         -o-transform: translateY(-50%);
@@ -109,11 +111,11 @@
         position: absolute;
         top: 45%;
         left: 13.75vw; }
-        #pcHeader #gnb .dep2_bg .dep1_txt img {
+        #pcHeader #pcGnb .dep2_bg .dep1_txt img {
           float: left;
           width: 2.8645833333vw;
           height: 2.6041666667vw; }
-        #pcHeader #gnb .dep2_bg .dep1_txt p {
+        #pcHeader #pcGnb .dep2_bg .dep1_txt p {
           float: left;
           font-weight: 700;
           font-size: 2.0833333333vw;

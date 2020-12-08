@@ -1,6 +1,6 @@
 $(document).ready(function(){
     //#pcHeader초기화
-    var _pcGnb = $('#pcHeader>#gnb');
+    var _pcGnb = $('#pcHeader>#pcGnb');
     _pcGnb.find('.dep2, .dep2_bg, .dep1_txt').hide();
 
     $('#pcHeader').on({
