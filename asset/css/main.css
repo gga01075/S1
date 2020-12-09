@@ -17,6 +17,10 @@ html, body, #content {
   height: 100%;
   overflow: hidden; }
 
+#content {
+  position: relative;
+  z-index: 100; }
+
 #content .tg {
   -webkit-transition: top 0.5s;
   -moz-transition: top 0.5s;
@@ -169,6 +173,7 @@ html, body, #content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  background: #fff;
   padding-top: 10.4166666667vw;
   color: #000; }
   #cnt2 .state_bar {
@@ -753,11 +758,11 @@ html, body, #content {
     float: left;
     height: 100%; }
   #cnt6 #map {
-    width: 66%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top: 80px; }
+    padding-top: 80px;
+    width: 66%; }
     #cnt6 #map .overlay_info {
       border-radius: 6px;
       margin-bottom: 12px;

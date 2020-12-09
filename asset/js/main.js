@@ -19,8 +19,16 @@ $(document).ready(function () {
   
       //.tg들은 relative 속성으로 top좌표를 0%, -100%, -200%, -300%, -400%로 위치를 옮긴다. 
       timerResize = setTimeout(function () {
-        $('.tg').css({top: -(tgIdx*100) + '%'});
-        //css에서 transition처리
+        if(win_width>=1367){
+          //css에서 transition처리
+          $('.tg').css({top: -(tgIdx*100) + '%'});
+          $('#footer').css({top: -37 +(-(tgIdx*100)) + 'vh'});  
+        }
+        //태블릿,모바일 버전 ==> 마우스휠 이벤트 제거, 위치 제자리로 
+        else if(win_width<1367){ 
+          $('.tg').css({top:0});
+          $('#footer').css({top:0});
+        }
       }, 50);
     });
     _win.trigger('resize');
@@ -33,7 +41,9 @@ $(document).ready(function () {
     timerWheel = setTimeout(function () {
       //현재 애니메이트(.cnt_wrap) 중이면 함수 강제 종료
       if ( $('html, body').is(':animated') ) return false;
-
+      if(win_width<1367){
+        return false;
+      }
       //delta값 구하기
       //e.originalEvent.wheelDelta 파이어폭스를 제외한 나머지 브라우저
       //e.originalEvent.detail*-1 파이어폭스 only
@@ -75,6 +85,11 @@ $(document).ready(function () {
     }
     $('.tg').css({top: -(tgIdx*100) + '%'});
     console.log(tgIdx);
+    if(tgIdx===3){
+      setTimeout(function(){
+        $('#footer').css({'z-index':90});
+      },100);
+    }
 
     if (tgIdx < 1 && delta > 0) {
       $('#pcHeader').removeClass('active on');
@@ -87,7 +102,7 @@ $(document).ready(function () {
   function subWheel() {
     console.log('subWheel()');
     if (tgIdx === 1) {
-      marginT = marginT + delta * 2;
+      marginT = marginT + delta * 1.3;
       console.log(marginT);
       if (marginT > 0) {
         marginT = 0;
@@ -111,10 +126,16 @@ $(document).ready(function () {
           });
         } else if (delta > 0) {
           onePageScrolling();
+         
         }
       } else {  //#cnt5에서 wheel
         if (delta < 0) {
+          setTimeout(function(){
+            $('#footer').css({'z-index':100});
+          },40);
           onePageScrolling();
+
+          
         } else if (delta > 0) {
           $($('#sec45')).stop().animate({left: 0}, 400, function () {
             $(this).children('#cnt5').removeClass('on');
@@ -123,19 +144,6 @@ $(document).ready(function () {
       }
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   //index section1 슬라이드
   var mySwiper1 = new Swiper('#cnt1 .swiper-container', {
@@ -161,24 +169,18 @@ $(document).ready(function () {
     },
 
     on: {
-      init: function () {
-        /* do something */
+      slideChange:function(){
+        $('#cnt1 .controller .slide_timer').removeClass('on');
+        setTimeout(function(){
+          $('#cnt1 .controller .slide_timer').addClass('on');
+        },1)
       },
       slideChangeTransitionStart: function () {
         $('.swiper-slide').find('strong,p').removeClass('in');
         $('.swiper-slide-active').find('strong,p').addClass('in');
       },
     }
-
   });
-
-  $('#cnt1 .swiper-button-prev,#cnt1 .swiper-button-next').on('click',function(){
-    $('#cnt1 .controller .slide_timer').removeClass('on');
-    setTimeout(function(){
-      $('#cnt1 .controller .slide_timer').addClass('on');
-    },1);
-  });
-
 
   /* section4 탭브라우징 제어 */
 
@@ -263,16 +265,6 @@ $(document).ready(function () {
       $(this).removeClass('on');
     }
   });
-
-
-  // 반응형 코드 
-  function winSize(){
-    if(win_width<1367){ //윈도우 창의 크기가 1200px보다 작으면 마우스휠 이벤트 제거
-      _cnt.off('mousewheel DOMMouseScroll');
-    }
-  }
-  winSize();
-
 
 
 
