@@ -64,6 +64,88 @@ $(document).ready(function(){
 		},10);
 	});
 
+
+    //모바일, 태블릿 header 
+    $(window).on('scroll',function(){
+        var scrollY = $(this).scrollTop();
+        if(scrollY > 0) $('#mHeader').addClass('on');
+        else $('#mHeader').removeClass('on');
+    });
+
+    //모바일 메뉴 열기 버튼 클릭시
+    $('.gnb_open_btn').on('click',function(){
+        var _open_btn = $(this);
+        var _first = $('#mHeader .menubar .first');
+        var _last = $('#mHeader .menubar .last');
+        var _menuBar = $('#mHeader .menubar');
+        var _closeBtn = $('#mHeader .menubar .gnb_close_btn');
+        var _mGnb = $('#mGnb>ul');
+
+        //#dim 동적 생성 
+        _menuBar.before('<div id="dim"></div>');
+        var _dim = $('#dim');
+
+        _dim.stop().fadeIn('fast');
+        _menuBar.stop().fadeIn('fast');
+
+        //모바일 메뉴바 내 첫번쨰 버튼에서 shift+tab을 누르면 마지막 버튼으로 이동
+        _first.on('keydown',function(e){
+            if(e.shiftKey && e.keyCode ===9 ){
+                _last.focus();
+            }
+        });
+        //모바일 메뉴바 내 마지막 버튼에서 tab을 누르면 마지막 버튼으로 이동
+        _last.on('keydown',function(e){
+            if(!e.shiftKey && e.keyCode ===9 ){
+                _first.focus();
+            }
+        });
+
+        _mGnb.find('>li>a').on('click',function(e){
+            e.preventDefault();
+            _mGnb.find('>li').removeClass('on');
+            $(this).next().stop().slideDown('fast').parent().addClass('on');
+            _mGnb.find('>li').not('li.on').children('.dep2').hide();
+        });
+
+        //모바일 메뉴 닫기 클릭시
+        _closeBtn.on('click',function(){
+            _dim.fadeOut('fast',function(){
+                $(this).remove();
+            });
+            _menuBar.stop().fadeOut('fast');
+            _open_btn.focus();
+            _mGnb.find('li.on').removeClass('on').children('.dep2').hide();
+        });
+
+        //#dim을 클릭하는 경우도 닫겨진다.
+            _dim.on('click',function(){
+             _closeBtn.trigger('click');
+        });
+        
+     //esc키보드를 누른 경우도  닫겨진다.
+          $(window).on('keydown',function(e){
+              if(e.keyCode === 27){
+                    _closeBtn.trigger('click');
+                }
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //투명 버튼 호버 또는 포커스 효과
     $('.btn_more.transparent').on({
         'mouseenter focus':function(){
@@ -83,6 +165,15 @@ $(document).ready(function(){
             $(this).find('.btn_arrow').stop().animate({right: 30},300).prev().stop().animate({width:'0%'});
         }
     });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -128,5 +219,15 @@ $(document).ready(function(){
 
 		//window.open('열려질 새창의 경로명','팝업창 이름','옵션');
 		window.open(tgHref, 'popup');
-	});
+    });
+    
+
+
+
+
+
+
+
+
+
 });

@@ -7,6 +7,13 @@
     background:url("../images/main/scroll_down.png");
     img{position: absolute;top: calc(45% - 14px);left:calc(45% - 7px);}
 }
+html, body, #content {
+    width: 100%;height: 100%;overflow: hidden; 
+}
+#content .tg {
+    @include transition(top 0.5s);
+    position: relative;width: 100%;height: 100vh;overflow: hidden; 
+}
 
 #cnt1{
     height: 100vh;position: relative;z-index: 100;
@@ -15,8 +22,8 @@
         .swiper-slide{
             width: 100%;height: 100vh;
             .slide_bg{
-                @include transform(scale(1.3));
-                @include transition(transform 10s);
+                @include transform(scale(1.4));
+                @include transition(transform 8s);
                 background: no-repeat center;width: 100%;height: 100%;position: absolute;top: 0;left: 0;
             }
             &.slide1 .slide_bg{background-image:url("../images/main/main_visual01.jpg");}
@@ -30,11 +37,11 @@
             }
             p{
                 @include traDelay(1.5s);
-                top:575px;left: 480px;font-size: 20px;line-height: 40px;
+                top:535px;left: 480px;font-size: 20px;line-height: 40px;
             }
 
             &.swiper-slide-active .slide_bg{
-                @include transform(scale(1));
+                @include transform(scale(1.1));
             }
         }
     }
@@ -80,16 +87,17 @@
 }
 
 #cnt2{
-    padding-top: 200px;height: auto;
+    @include borderbox;
+    padding-top:vw-calc-pc(200);
     color: #000;    
     .state_bar{
-        position: fixed;top: 23%;left: 17.5%;z-index: 0;width: 10%;height: 80vh;
+        position: fixed;top: 23%;left: 14%;z-index: 0;width: 10%;height: 80vh;
         .round{
             @include radius(50%);
             display: inline-block;width: 18px;height: 18px;background:$purple; }
         .vertical_line{width: 2px;height: 100%;background:$purple;margin-left: 8px;margin-top: -2px;}
         ul li{
-            position: absolute;left: -140px;width: 100px;font-size: 24px;text-align: right;letter-spacing: 1px;
+            position: absolute;left: -140px;width: 100px;font-size: vw-calc-pc(24);text-align: right;letter-spacing: 1px;
             &:first-of-type{top: 150px;}
             &:last-of-type{top: 420px;}
             &::after{content:"";position: absolute;top: -17px;right: 0;width: 50%;height: 2px;background:$purple;}
@@ -97,18 +105,31 @@
     }
     .list_wrap{
         @include borderbox;
-        width: 100%;padding-left: 21%;padding-bottom: 250px;
+        @include transition(margin-top 0.3s ease-out);
+        width: 100%;padding-left: 20%;padding-bottom: 250px;
         >div{
             strong{
-                position: relative;z-index: 60;font-size: 60px;font-weight: 800;color: #4d3074;
-                &::before{content:"";position: absolute;top: -50px;left: -80px;z-index: -1;width: 201px;height: 193px;background:url("../images/main/sec2_tit_bg.png") no-repeat center;}
+                position: relative;z-index: 60;font-size:vw-calc-pc(60);font-weight: 800;color: #4d3074;
+                &::before{
+                    @include bgsize(cover);
+                    content:"";position: absolute;top: -50px;left: -80px;z-index: -1;width: 201px;height: 193px;background:url("../images/main/sec2_tit_bg.png") no-repeat center;animation: box-rotate 50s infinite;
+                }
             } 
             p{display: inline-block;}
         }
+        @keyframes box-rotate{
+            0%{
+                @include transform(rotate(0));
+            }
+            100%{
+                @include transform(rotate(360deg));
+            }
+        }
+
         .vision{
-            margin-bottom: 300px;
+            margin-bottom: vw-calc-pc(300);
             strong::before{top: -60px;left: 20px;}
-            p{position: relative;top: 170px;left: 30px;font-size: 60px;font-weight: 500;line-height: 75px;}
+            p{position: relative;top: 170px;left: 30px;font-size:vw-calc-pc(60);font-weight: 500;line-height: vw-calc-pc(75);}
         }
 
         .mission{
@@ -126,8 +147,8 @@
                     &:nth-of-type(3)::before{content:"A";top: -20px;left: -60px;}
                     &:nth-of-type(4)::before{content:"∞";font-size: 250px;top: -70px;left: -70px;}
                     dl{
-                        dt{font-size: 36px;margin-bottom: 20px;font-weight: 500;}
-                        dd{font-size: 22px;font-weight: 300;line-height: 30px;}
+                        dt{font-size: vw-calc-pc(36);margin-bottom: 20px;font-weight: 500;}
+                        dd{font-size: vw-calc-pc(22);font-weight: 300;line-height: 30px;}
                     }
                 }
             }       
@@ -224,7 +245,7 @@
     section{float: left;position: relative;z-index: 100;width: 50%;height: 100vh;}
     #cnt4{
         @include borderbox;
-        background: #fff;color: #000;padding: 120px 0 0 80px;
+        background: #fff;color: #000;padding: 120px 0 0 80px;overflow: hidden;
         #serviceTab{
             @include borderbox;height: 100%;position: relative;
             .tablist{
@@ -317,16 +338,12 @@
     }
 }
 
-
-
 #cnt6{
     @include borderbox;
-    height: 63vh;position: relative;z-index: 100;background: #ffffff;
+    height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
     >div{float: left;height: 100%;}
-    #map{
+/*     #map{
         width: 66%;@include borderbox;padding-top: 80px;
-/*         iframe{border:none;width: 100%;height: 100%;} */
-
         .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
     .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
     .overlay_info a {display: block; background: #d95050; background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center; text-decoration: none; color: #fff; padding:12px 36px 12px 14px; font-size: 14px; border-radius: 6px 6px 0 0}
@@ -335,7 +352,7 @@
     .overlay_info img {vertical-align: top;}
     .overlay_info .address {font-size: 12px; color: #333; position: absolute; left: 80px; right: 14px; top: 24px; white-space: normal}
     .overlay_info:after {content:'';position: absolute; margin-left: -11px; left: 50%; bottom: -12px; width: 22px; height: 12px; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png) no-repeat 0 bottom;}
-    }
+    } */
     .contact{
         @include borderbox;
         width: 34%;background: #43366d;padding: 130px 0 0 105px;
@@ -360,3 +377,75 @@
     }
 }
 
+@media screen and (max-width:1366px){
+    .scroll_btn{display: none;}
+
+    #cnt1{
+        height: 100vh;max-height:768px ;
+        .swiper-wrapper{
+            .swiper-slide{     
+                strong{bottom:520px;top:auto;left: vw-calc-tablet(80);font-size: vw-calc-tablet(75);line-height:  vw-calc-tablet(84);}
+                p{top:auto;bottom:425px;left: vw-calc-tablet(80);line-height: vw-calc-tablet(40);font-size: vw-calc-tablet(25);}
+            }
+        }
+        .controller{
+            width:vw-calc-tablet(456);height: vw-calc-tablet(110);bottom: 260px;min-width: 340px;min-height: 100px;
+        }
+        .btn_more{
+            bottom: 50px;
+            &.transparent{left: vw-calc-tablet(30);}
+            &.purple{right:vw-calc-tablet(80);}
+        }
+    }
+
+    #cnt2{
+        padding-top:vw-calc-tablet(150);height: auto;  
+        .state_bar{display: none;}
+        .list_wrap{
+            @include borderbox;
+            padding-left: 8%;padding-bottom: 250px;
+            >div{
+                strong{
+                    font-size:vw-calc-tablet(60);
+                    &::before{content:"";position: absolute;z-index: -1;width: vw-calc-tablet(201);height: vw-calc-tablet(193);background:url("../images/main/sec2_tit_bg.png") no-repeat center;}
+                } 
+                p{display: inline-block;}
+            }
+            .vision{
+                margin-bottom:vw-calc-tablet(300);
+                strong::before{top: -60px;left:vw-calc-tablet(20);}
+                p{position: relative;top:vw-calc-tablet(170);left: vw-calc-tablet(30);font-size: vw-calc-tablet(60);font-weight: 500;line-height: vw-calc-tablet(75);}
+            }
+    
+            .mission{
+            margin-top: vw-calc-tablet(20);margin-left: vw-calc-tablet(200);
+                ul {
+                    li{
+                        width: vw-calc-tablet(600);margin-top: vw-calc-tablet(150);
+                        &:nth-of-type(1){margin-left: vw-calc-tablet(100);}
+                        &:nth-of-type(2){margin-left: vw-calc-tablet(280);}
+                        &:nth-of-type(3){margin-left: vw-calc-tablet(100);}
+                        &:nth-of-type(4){margin-left: vw-calc-tablet(-10);margin-top: vw-calc-tablet(180);}
+                        &::before{content:"";position: absolute;width: 140px;height: 140px;font-family: NanumS,"맑은 고딕","Malgun Gothic",sans-serif;font-weight: 800;font-size: 150px;color: #c1a0d7;opacity: 0.3;letter-spacing: -10px;}
+                        &:nth-of-type(1)::before{content:"1";top:vw-calc-tablet(-20);left: vw-calc-tablet(-80);}
+                        &:nth-of-type(2)::before{content:"2020";top: vw-calc-tablet(-20);left: vw-calc-tablet(-100);}
+                        &:nth-of-type(3)::before{content:"A";top: vw-calc-tablet(-20);left: vw-calc-tablet(-60);}
+                        &:nth-of-type(4)::before{content:"∞";font-size:vw-calc-tablet(250);top: vw-calc-tablet(-70);left:vw-calc-tablet(-70);}
+                        dl{
+                            dt{font-size: vw-calc-tablet(36);margin-bottom:vw-calc-tablet(20);}
+                            dd{font-size: vw-calc-tablet(22);line-height: vw-calc-tablet(30);}
+                        }
+                    }
+                }       
+            }
+        }
+    }
+
+
+
+
+}
+
+@media screen and (max-width:768px){
+    
+}

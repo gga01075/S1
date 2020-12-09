@@ -21,6 +21,9 @@
         }
     }
 }
+.header.on{
+    background: #060415;
+}
  
 #pcHeader{
     @include transition(all .3s);
@@ -59,9 +62,6 @@
             }
         }  
     }
-}
-#pcHeader.on{
-    background: #060415;
 }
 
 #mHeader{
@@ -132,37 +132,7 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:1200px){
+@media screen and (max-width:1366px){
     #pcHeader{display: none;}
     #mHeader{
         display: block;
@@ -174,7 +144,7 @@
                 span{display: inline-block;padding-top: 15px;}
             }
         }
-        button{
+        .gnb_open_btn{
             position: absolute;top: 20px;right: 40px;width: 32px;height: 30px;background: url("../images/layout/m_menuBtn.png") no-repeat center;
         }
         .util{
@@ -184,6 +154,58 @@
                 +li{margin-left: 25px;font-size: 18px;}
             }
         }
+        .menubar, #dim{position: fixed;z-index: 900;top: 0;height: 100vh;}
+        .menubar{
+            display: none;
+            right: 0;width: 75%;color: #000;
+            background: linear-gradient(90deg, #fff 55%, #e7dcf0 45%);
+            .menu_left{
+                @include borderbox;
+                width: 55%;height: 100%;text-align:right;padding: 20px 40px 0 50px;
+                .call{
+                    strong{font-size: 20px;}
+                    p{font-size: 30px;font-weight:700;margin: 10px 0 15px;}
+                    .m_counsel{
+                        @include radius(8px);margin-left: 15px;
+                        display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;margin-bottom: 70px;
+                    } 
+                }
+                #mGnb{
+                    a{display: inline-block;}
+                    >ul>li{
+                        position: relative;margin-bottom: 50px;
+                        &.on a::before{
+                            @include transform(scale(1));
+                        }
+                        >a{
+                            font-size: 45px;font-weight: 800;position: relative;
+                            &::before{
+                                @include transform(scale(0));@include transition(all .3s);
+                                content:"";position: absolute;bottom: -3px;left: 0;width: 100%;height: 2px;background: #000;
+                            }
+                        }
+                        >.dep2{
+                            position: absolute;top: 15px;left: 450px;width: 155px;text-align: left;display: none;
+                            >li{
+                                margin-bottom: 22px;
+                                >a{font-size: 18px;font-weight: 600;}
+                            }
+                        }
+                    }
+                }
+            }
+            .gnb_close_btn{
+                @include bgsize(cover);
+                position: absolute;top: 20px;right: 40px;width: 28px;height: 28px;background: url("../images/layout/m_close_menu.svg") no-repeat center;
+            }
+        }
+        #dim{display: none;left: 0;width: 100%;background: rgba(0,0,0,.6);}
+
     }
+
+}
+
+@media screen and (max-width: 768px){
+    
 
 }

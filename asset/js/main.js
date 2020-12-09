@@ -1,37 +1,29 @@
 $(document).ready(function () {
   var _win = $(window);
+  var win_width= _win.width();
   var _cnt = $('#content .tg');
-  var cntPosY; //섹션의 offset().top 값을 배열에 저장
-  var tgIdx = 0; //로딩시 보여지는 섹션의 인덱스 번호
-  var cntPosY; //섹션의 offset().top 값을 배열에 저장
-  var timerScroll = 0; //scroll 이벤트의 실행문 누적을 방지
+  var tgIdx = 0; //로딩시 보여지는 섹션의 인덱스 번호 #cnt1
   var total = _cnt.length; //섹션의 전체 개수
   var timerResize = 0; //resize이벤트의 실행문 누적을 방지 하기위해 
   var timerWheel = 0; //mousewheel 이벤트의 실행문 누적을 방지
-  var sec45_top =  $('#sec45').offset().top;
   var swiper_timer = 0;
+  var delta;
+  var mtMax = -($('#cnt2 .list_wrap').outerHeight() - _win.height() + 100);
+  //본문2 비전과미션 휠제어시 margin-top값 지정
+  //console.log($('#cnt2 .list_wrap').outerHeight(), _win.height(), mtMax);
+  var marginT = 0;  //$('#cnt2 .list_wrap')의 margin-top
 
-  //1) resize이벤트 cntPosY배열에 섹션의 offset().top 저장 + 하단푸터인식
-  _win.on('resize', function () {
-    clearTimeout(timerResize);
-
-    timerResize = setTimeout(function () {
-      cntPosY = new Array(total);
-      /* cntPosY[0] = $cnt.eq(0).offset().top;
-      cntPosY[1] = $cnt.eq(1).offset().top;
-      cntPosY[2] = $cnt.eq(2).offset().top; */
-
-      for (var i = 0; i < total; i++) {
-        cntPosY[i] = _cnt.eq(i).offset().top;
-      }
-
-      //창사이즈에 변화가 생길때 현재 활성화된 섹션이 잘 보여지도록 애니메이트 추가 처리
-      $('html, body').stop().animate({
-        scrollTop: cntPosY[tgIdx]
-      }, 1000, 'easeOutBack');
-    }, 50);
-  });
-  _win.trigger('resize');
+    //1) resize이벤트
+    _win.on('resize', function () {
+      clearTimeout(timerResize);
+  
+      //.tg들은 relative 속성으로 top좌표를 0%, -100%, -200%, -300%, -400%로 위치를 옮긴다. 
+      timerResize = setTimeout(function () {
+        $('.tg').css({top: -(tgIdx*100) + '%'});
+        //css에서 transition처리
+      }, 50);
+    });
+    _win.trigger('resize');
 
   //마우스 휠 이벤트
   _cnt.on('mousewheel DOMMouseScroll', function (e) {
@@ -39,46 +31,105 @@ $(document).ready(function () {
     clearTimeout(timerWheel);
 
     timerWheel = setTimeout(function () {
-      //4-1) 현재 애니메이트(.cnt_wrap) 중이면 함수 강제 종료
+      //현재 애니메이트(.cnt_wrap) 중이면 함수 강제 종료
       if ( $('html, body').is(':animated') ) return false;
 
-      //4-2) delta값 구하기
+      //delta값 구하기
       //e.originalEvent.wheelDelta 파이어폭스를 제외한 나머지 브라우저
       //e.originalEvent.detail*-1 파이어폭스 only
-      var delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
-      //console.log(delta);
+      delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+      console.log(delta);
 
-      //4-3) if : 휠내리기-음수-오른쪽,  else if : 휠올리기-양수-왼쪽 => tgIdx
-      if (delta < 0 && tgIdx < total - 1 ) {  //마우스휠을 내렸을 때 
-        if(tgIdx === 3){
-          $(window).scrollTop(sec45_top);
-          $('#sec45').stop().animate({left:'-100%'});
-        }else{
-          tgIdx++;
-          $('html, body').stop().animate({
-            scrollTop: cntPosY[tgIdx]
-          }, 700, 'easeOutCubic');
-        }
-/*         console.log(_this);
-        console.log(delta, tgIdx, '휠내리기'); */
-
-      
-      } else if (delta > 0 && tgIdx > 0) {    //마우스휠을 올렸을 때 
-          if(tgIdx === 3){                  
-                  $(window).scrollTop(sec45_top);
-                  $('#sec45').stop().animate({left:'0%'});
-                }else{
-                  tgIdx--;
-                  $('html, body').stop().animate({
-                    scrollTop: cntPosY[tgIdx]
-                  }, 700, 'easeOutCubic');
-                }
+      if (_this.hasClass('subwheel')) {
+        subWheel();
+      } else {
+        onePageScrolling();
       }
     
     }, 200);
-
-
   });
+
+    // 키보드 이벤트
+    _win.keydown(function(e){
+   
+      if ( _cnt.eq(tgIdx).hasClass('subwheel') ) { //.subwheel은 원페이지스크롤링이 아닌 섹션
+        subWheel(tgIdx);
+      } else {
+        if(e.keyCode == 38 || e.keyCode == 33) { // 윗방향키와 page up
+            delta = +120;
+        } else if(e.keyCode == 40 || e.keyCode == 34) { // 아래방향키와 page down
+            delta = -120;
+        }      
+        onePageScrolling(tgIdx);
+      }
+  });
+
+  //수직 animate
+  function onePageScrolling() {
+    if ( $('html, body').is(':animated') ) return false;
+    //console.log('onePageScrolling() 실행, tgIdx: ' + tgIdx);
+    if (delta < 0 && tgIdx < total - 1) {  //마우스휠을 내렸을 때 
+      tgIdx++;
+    } else if (delta > 0 && tgIdx > 0) {    //마우스휠을 올렸을 때
+      tgIdx--;
+    }
+    $('.tg').css({top: -(tgIdx*100) + '%'});
+    console.log(tgIdx);
+
+    if (tgIdx < 1 && delta > 0) {
+      $('#pcHeader').removeClass('active on');
+    } else {
+      $('#pcHeader').addClass('active on');
+    }
+  }
+
+  //본문2(margin-top), 본문 4/5(수평 animate)에서 제어
+  function subWheel() {
+    console.log('subWheel()');
+    if (tgIdx === 1) {
+      marginT = marginT + delta * 2;
+      console.log(marginT);
+      if (marginT > 0) {
+        marginT = 0;
+        clearTimeout(timeout3);
+        var timeout3 = setTimeout(function(){
+          onePageScrolling();
+        },200);
+      } else if (marginT < mtMax) {
+        marginT = mtMax;
+        var timeout3 = setTimeout(function(){
+          onePageScrolling();
+        },200);
+      }
+      //
+      $('#cnt2 .list_wrap').css('marginTop', marginT);
+    } else if (tgIdx === 3) {
+      if ( !$('#cnt5').hasClass('on') ) {  //#cnt4에서 wheel
+        if (delta < 0) {
+          $($('#sec45')).stop().animate({left: '-100%'}, 400, function () {
+            $(this).children('#cnt5').addClass('on');
+          });
+        } else if (delta > 0) {
+          onePageScrolling();
+        }
+      } else {  //#cnt5에서 wheel
+        if (delta < 0) {
+          onePageScrolling();
+        } else if (delta > 0) {
+          $($('#sec45')).stop().animate({left: 0}, 400, function () {
+            $(this).children('#cnt5').removeClass('on');
+          });
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
 
 
 
@@ -202,7 +253,6 @@ $(document).ready(function () {
     });
   }
 
-
   //section4(서비스) li에 hover,focusin이벤트
   $('#cnt4 .tabpanel ul li').attr('tabindex', 0);
   $('#cnt4 .tabpanel ul li').on({
@@ -215,17 +265,18 @@ $(document).ready(function () {
   });
 
 
- //section6 카카오맵
- 
-/*   var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-  var options = { //지도를 생성할 때 필요한 기본 옵션
-    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-    level: 3 //지도의 레벨(확대, 축소 정도)
-  };
-
-  var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+  // 반응형 코드 
+  function winSize(){
+    if(win_width<1367){ //윈도우 창의 크기가 1200px보다 작으면 마우스휠 이벤트 제거
+      _cnt.off('mousewheel DOMMouseScroll');
+    }
+  }
+  winSize();
 
 
- */
+
+
+
+
 
 });

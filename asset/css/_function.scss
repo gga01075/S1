@@ -3,8 +3,8 @@
     @return #{$vwSize}vw;
 }
 
-@function vw-calc1200($px){
-    $vwSize : $px / (1200 / 100);
+@function vw-calc-tablet($px, $viewport:1200){
+    $vwSize : $px / ($viewport / 100);
     @return #{$vwSize}vw;
 }
     

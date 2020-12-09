@@ -61,7 +61,7 @@
 
 @mixin animation($value...){
     -webkit-animation: $value;
-    -ms-zoom-animation: $value;
+    -moz-animation: $value;
 }
 
 @mixin aniDelay($value...){
