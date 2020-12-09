@@ -86,9 +86,7 @@ $(document).ready(function () {
     $('.tg').css({top: -(tgIdx*100) + '%'});
     console.log(tgIdx);
     if(tgIdx===3){
-      setTimeout(function(){
-        $('#footer').css({'z-index':90});
-      },100);
+        $('#footer').css({'z-index':90}).stop().fadeOut('fast');
     }
 
     if (tgIdx < 1 && delta > 0) {
@@ -130,9 +128,7 @@ $(document).ready(function () {
         }
       } else {  //#cnt5에서 wheel
         if (delta < 0) {
-          setTimeout(function(){
-            $('#footer').css({'z-index':100});
-          },40);
+            $('#footer').css({'z-index':100}).fadeIn('fast');
           onePageScrolling();
 
           
