@@ -390,7 +390,7 @@
                   box-sizing: border-box;
                   font-size: 18px;
                   font-weight: 600;
-                  display: block;
+                  display: inline-block;
                   padding-left: 40px; }
       #mHeader .menubar .gnb_close_btn {
         -webkit-background-size: cover !important;

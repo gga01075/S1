@@ -85,8 +85,11 @@ $(document).ready(function(){
         _menuBar.before('<div id="dim"></div>');
         var _dim = $('#dim');
 
-        _dim.stop().fadeIn('fast');
-        _menuBar.stop().fadeIn('fast');
+        _dim.next().addBack().stop().fadeIn('fast');
+        setTimeout(function(){
+            _menuBar.find('.first').focus();
+        },310);
+        
 
         //모바일 메뉴바 내 첫번쨰 버튼에서 shift+tab을 누르면 마지막 버튼으로 이동
         _first.on('keydown',function(e){
@@ -130,16 +133,6 @@ $(document).ready(function(){
                 }
         });
     });
-
-
-
-
-
-
-
-
-
-
 
 
 

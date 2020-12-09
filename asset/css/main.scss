@@ -379,6 +379,10 @@ html, body, #content {
 }
 
 @media screen and (max-width:1366px){
+    html, body, #content {
+        height: auto;overflow: auto; 
+    }
+    #content .tg{height: auto;}
     .scroll_btn{display: none;}
 
     #cnt1{
@@ -442,10 +446,135 @@ html, body, #content {
         }
     }
 
+    #cnt3{
+        height: 100vh;min-height: 600px;padding: vw-calc-tablet(80) 0 0 vw-calc-tablet(100);
+        h2,p{left: vw-calc-tablet(100);}
+        h2{
+            font-size: vw-calc-tablet(50);padding-top: vw-calc-tablet(40);margin-bottom:vw-calc-tablet(20);
+            &::before{left: -100px;width: vw-calc-tablet(150);height: vw-calc-tablet(125);}
+        }
+        p{margin-bottom: vw-calc-tablet(120);}
+    
+        .solution_step{
+            width: 80%;position: absolute;left: -100px;top:55%;
+    
+            .step{
+                li{
+                    top: 20px;width: 70px;
+                    .circle{top: -25px;width: 15px;height: 15px;}
+                }
+            }
+        }
+        .btn_more{
+            height:50px;line-height: 50px;margin: 0;
+            position: absolute;left: vw-calc-tablet(190);bottom:vw-calc-tablet(80);
+            &.transparent{width:vw-calc-tablet(200);padding-left:0;background: none;
+                border: 2px solid #fff;text-align: center;
+                .btn_arrow{right: 40px;background: none;} 
+            }
+        }   
+    }
 
-
-
+    #sec45{
+        width: 100%;height:auto;
+        section{float: none;position: relative;width: 100%;height: auto;}
+        #cnt4{
+            padding: 60px 0 300px 0;
+            #serviceTab{
+                @include borderbox;height: 100%;
+                .tablist{
+                    @include translateX-50;
+                    position: absolute;left: 50%;top: auto;bottom:50px;width: 400px;height: 30px;text-align: center;
+                    .tab{
+                        @include transition(all .3s);
+                        height: 100%;display: inline-block;
+                        font-size: 18px;margin-bottom: 40px;cursor:pointer;overflow: auto;text-indent: 0px;
+                        span{position: relative;top: -2px;margin-right: 4px;font-size: 14px;font-weight: 700;color: #4d3074;display: none;}
+                        &.active{font-weight: 700;}
+                        +.tab{margin-left: 30px;}
+                    }
+                }
+                .tabpanel{
+                    display: none;position: static;left: auto;top: 0;width: 800px;height: 100%;margin: 0 auto;
+                    &.active{display: block;}
+                    >p:first-of-type{
+                        font-size: 30px;color: #4d3074;font-weight: 600;letter-spacing: 2px;margin-bottom: 10px;
+                        span{font-size: 46px;font-weight: 600;display: inline-block;margin-left: 5px;}
+                    }
+                    >strong{font-size: 60px;letter-spacing: -3px;}
+                    >p:last-of-type{font-size: 18px;margin-top: 10px;margin-bottom: 50px;}
+                    ul{ 
+                        li,li::after,strong::before,a{
+                            @include transition(all .7s);
+                        }
+                        li{
+                            @include borderbox;
+                            @include bgsize(cover);
+                            float: left;position: relative;width: 250px;height: 312px;background:no-repeat center;text-align: center;color: #ffffff;padding-top: 220px;
+                            &::after{content:"";position: absolute;top: 8px;left: 8px;width: 230px;height:292px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
+                            +li{margin-left: 25px;}
+                            strong{
+                                &::before{content:"";position: absolute;top: -30px;left: calc(50% - 20px);width: 35px;height: 1px;background: #fff;}
+                                display: inline-block;font-size: 24px;margin-bottom: 20px;position: relative;
+                            }
+                            p{margin-bottom: 30px;font-weight: 300;}
+                            a{
+                                display: inline-block;width: 100px;height: 100px;border: 1px solid #fff;line-height: 100px;font-size: 14px;background: transparent;position: relative;z-index: 10;overflow: hidden;display: none;opacity: 0;
+                                span{position: relative;z-index: 1;}
+                                &::after{
+                                    @include transition(all 1s);
+                                    @include transform(skewX(-45deg));
+                                    content:"";width: 250%;height: 250%;position: absolute;top: -170px;left: -170px;background: #4d3074;
+                                }
+                                &:hover::after,&:focus::after{top: -80px;left: -80px;}
+                            }
+                        }
+                        li.on{
+                            &::after{opacity: 1;}
+                            padding-top: 140px;
+                            strong::before{opacity: 0;}
+                            a{display: inline-block;opacity: 1;}
+                        }
+                    } 
+                }
+                #tabpanel1 ul li:nth-of-type(1){background-image: url("../images/main/sec4_solution_home1.jpg");}
+                #tabpanel1 ul li:nth-of-type(2){background-image: url("../images/main/sec4_solution_home2.jpg");}
+                #tabpanel1 ul li:nth-of-type(3){background-image: url("../images/main/sec4_solution_home3.jpg");}
+                #tabpanel2 ul li:nth-of-type(1){background-image: url("../images/main/sec4_solution_store1.jpg");}
+                #tabpanel2 ul li:nth-of-type(2){background-image: url("../images/main/sec4_solution_store2.jpg");}
+                #tabpanel2 ul li:nth-of-type(3){background-image: url("../images/main/sec4_solution_store3.jpg");}
+                #tabpanel3 ul li:nth-of-type(1){background-image: url("../images/main/sec4_solution_company1.jpg");}
+                #tabpanel3 ul li:nth-of-type(2){background-image: url("../images/main/sec4_solution_company2.jpg");}
+                #tabpanel3 ul li:nth-of-type(3){background-image: url("../images/main/sec4_solution_company3.jpg");}
+            }
+        
+        }
+        
+        #cnt5{
+            @include borderbox; @include bgsize(cover);
+            background: url("../images/main/sec5_bg.jpg") no-repeat center;padding: 120px 0 0 80px;
+           text-align: center;
+           h2{
+               @include bgsize(cover);display: inline-block;
+               width: 382px;height: 138px;background:url("../images/main/cles_txt.png") no-repeat center;position: relative;top: 90px;
+            }
+            >p:first-of-type{position: relative;top: -100px;font-size: 35px;font-weight: 700;}
+            >p:last-of-type{font-size: 20px;line-height: 28px;margin-top: 70px;}
+            ul{
+                text-align: center;
+                li{ 
+                    position: relative;display: inline-block;width: 151px;height: 135px;margin: 60px 50px 80px;
+                    @include bgsize(cover);
+                    &::before{content:"";position: absolute;top: 0;left: 0;width: 100%;height: 100%; background: url("../images/main/cles_listbox.svg") no-repeat center;opacity: 0.7;}
+                    &::after{content:"";position: absolute;right: 28px;bottom: 16px;width: 50px;height: 1px;background: #fff;}
+                    span{position: absolute;bottom: 40px;right: 0;font-size: 20px;}
+                }
+            }
+            >a{display: inline-block;text-align: left;}
+        }
+    }
 }
+
 
 @media screen and (max-width:768px){
     
