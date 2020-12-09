@@ -342,7 +342,7 @@ html, body, #content {
     @include borderbox;
     height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
     >div{float: left;height: 100%;}
-/*     #map{
+     #map{
         width: 66%;@include borderbox;padding-top: 80px;
         .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
     .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
@@ -352,7 +352,7 @@ html, body, #content {
     .overlay_info img {vertical-align: top;}
     .overlay_info .address {font-size: 12px; color: #333; position: absolute; left: 80px; right: 14px; top: 24px; white-space: normal}
     .overlay_info:after {content:'';position: absolute; margin-left: -11px; left: 50%; bottom: -12px; width: 22px; height: 12px; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png) no-repeat 0 bottom;}
-    } */
+    } 
     .contact{
         @include borderbox;
         width: 34%;background: #43366d;padding: 130px 0 0 105px;
