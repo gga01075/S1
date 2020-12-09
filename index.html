@@ -356,22 +356,10 @@
                     level: 3 // 지도의 확대 레벨
                 };
 
-            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+            // 지도를 표시할 div와  지도 옵션으로  지도를 생성
             var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-/*             // 마커가 표시될 위치입니다 
-            var markerPosition  = new kakao.maps.LatLng(37.560015262099064, 126.97301619920425); 
-
-            // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map); */
-
-            // 커스텀 오버레이에 표시할 내용입니다
-            // HTML 문자열 또는 Dom Element 입니다
+            // 커스텀 오버레이에 표시할 내용
             var content = '<div class="overlay_info">';
             content += '    <a href="https://place.map.kakao.com/9901924" target="_blank"><strong>에스원 본사</strong></a>';
             content += '    <div class="desc">';
@@ -380,10 +368,10 @@
             content += '    </div>';
             content += '</div>';
 
-            // 커스텀 오버레이가 표시될 위치입니다 
+            // 커스텀 오버레이가 표시될 위치
             var position = new kakao.maps.LatLng(37.560015262099064, 126.97301619920425);
 
-            // 커스텀 오버레이를 생성합니다
+            // 커스텀 오버레이를 생성
             var mapCustomOverlay = new kakao.maps.CustomOverlay({
                 position: position,
                 content: content,
@@ -393,6 +381,13 @@
 
             // 커스텀 오버레이를 지도에 표시합니다
             mapCustomOverlay.setMap(map);
+
+            function setZoomable(zoomable) {
+                // 마우스 휠로 지도 확대,축소 가능여부를 설정
+                map.setZoomable(zoomable);    
+            }
+            setZoomable(false);
+            
             </script> 
             <div class="contact">
                 <h3>CONTACT</h3>

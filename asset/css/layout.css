@@ -129,7 +129,7 @@
   display: none; }
 
 #footer {
-  height: 37vh;
+  height: 37vh !important;
   background: #15161a;
   position: relative;
   z-index: 100;
