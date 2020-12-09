@@ -161,34 +161,46 @@
             background: linear-gradient(90deg, #fff 55%, #e7dcf0 45%);
             .menu_left{
                 @include borderbox;
-                width: 55%;height: 100%;text-align:right;padding: 20px 40px 0 50px;
+                width: 55%;height: 200px;text-align:right;padding-top: 20px;margin-bottom: 70px;
                 .call{
+                    @include borderbox;
+                    padding: 0 40px 0 50px;
                     strong{font-size: 20px;}
                     p{font-size: 30px;font-weight:700;margin: 10px 0 15px;}
                     .m_counsel{
                         @include radius(8px);margin-left: 15px;
-                        display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;margin-bottom: 70px;
+                        display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;
                     } 
                 }
-                #mGnb{
-                    a{display: inline-block;}
-                    >ul>li{
-                        position: relative;margin-bottom: 50px;
-                        &.on a::before{
-                            @include transform(scale(1));
+            }
+            #mGnb{
+                height: calc(100vh - 200px);
+                a{display: inline-block;}
+                >ul{
+                    position: relative;
+                    >li{
+                        @include borderbox;padding-right: 40px;width: 55%;
+                        margin-bottom: 50px;text-align: right;
+                        &.on a{
+                            color: #000;
+                            &::before{
+                                @include transform(scale(1));
+                            }
                         }
                         >a{
-                            font-size: 45px;font-weight: 800;position: relative;
+                            font-size: 45px;font-weight: 800;position: relative;color: #43366d;
                             &::before{
                                 @include transform(scale(0));@include transition(all .3s);
                                 content:"";position: absolute;bottom: -3px;left: 0;width: 100%;height: 2px;background: #000;
                             }
                         }
                         >.dep2{
-                            position: absolute;top: 15px;left: 450px;width: 155px;text-align: left;display: none;
+                            position: absolute;top: auto;right: 0;width:45%;margin-top: -30px;text-align: left;display: none;
                             >li{
                                 margin-bottom: 22px;
-                                >a{font-size: 18px;font-weight: 600;}
+                                >a{
+                                    @include borderbox;
+                                    font-size: 18px;font-weight: 600;display: block;padding-left: 40px;}
                             }
                         }
                     }

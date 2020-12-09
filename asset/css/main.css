@@ -858,8 +858,7 @@ html, body, #content {
     display: none; }
 
   #cnt1 {
-    height: 100vh;
-    max-height: 768px; }
+    height: 100vh; }
     #cnt1 .swiper-wrapper .swiper-slide strong {
       bottom: 520px;
       top: auto;
