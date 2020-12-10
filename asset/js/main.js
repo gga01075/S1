@@ -163,9 +163,14 @@ $(document).ready(function () {
   $('#footer .scroll_btn').on('click',function(){
               tgIdx=0;
               $('#footer').css({'z-index':90}).stop().fadeOut('fast');
-              $('.tg').stop().animate({top: -(tgIdx*100) + '%'},100);
+              $('.tg').stop().animate({top: -(tgIdx*100) + '%'},100,function(){
+                $('#pcHeader').removeClass('active on'); 
+              });
+              $($('#sec45')).stop().animate({left: 0},function(){
+                $(this).children('#cnt5').removeClass('on');
+              });
               $('#footer').css({top: -37 +(-(tgIdx*100)) + 'vh'},100); 
-              $('#pcHeader .logo a').focus(); 
+              
   });
 
 
