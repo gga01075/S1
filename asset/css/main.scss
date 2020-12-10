@@ -17,12 +17,13 @@ html, body, #content {
 }
 
 #cnt1{
-    height: 100vh;position: relative;z-index: 100;
+    height: 100vh !important;position: relative;z-index: 100;
     .swiper-wrapper{
-        @include bgsize(cover);
+        
         .swiper-slide{
             width: 100%;height: 100vh;
             .slide_bg{
+                @include bgsize(cover);
                 @include transform(scale(1.4));
                 @include transition(transform 8s);
                 background: no-repeat center;width: 100%;height: 100%;position: absolute;top: 0;left: 0;
@@ -402,7 +403,7 @@ html, body, #content {
         .btn_more{
             bottom: 50px;
             &.transparent{left: vw-calc-tablet(30);}
-            &.purple{right:vw-calc-tablet(80);}
+            &.purple{right:vw-calc-tablet(120);}
         }
     }
 
@@ -498,7 +499,7 @@ html, body, #content {
                     }
                 }
                 .tabpanel{
-                    display: none;position: static;left: auto;top: 0;width: 800px;height: 100%;margin: 0 auto;
+                    display: none;position: static;left: auto;top: 0;width:vw-calc-tablet(1037);height: 100%;margin: 0 auto;
                     &.active{display: block;}
                     >p:first-of-type{
                         font-size: 30px;color: #4d3074;font-weight: 600;letter-spacing: 2px;margin-bottom: 10px;
@@ -513,9 +514,9 @@ html, body, #content {
                         li{
                             @include borderbox;
                             @include bgsize(cover);
-                            float: left;position: relative;width: 250px;height: 312px;background:no-repeat center;text-align: center;color: #ffffff;padding-top: 220px;
+                            float: left;position: relative;width:vw-calc-tablet(322);height:vw-calc-tablet(404);background:no-repeat center;text-align: center;color: #ffffff;padding-top: 100px;
                             &::after{content:"";position: absolute;top: 8px;left: 8px;width: 230px;height:292px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
-                            +li{margin-left: 25px;}
+                            +li{margin-left: vw-calc-tablet(35);}
                             strong{
                                 &::before{content:"";position: absolute;top: -30px;left: calc(50% - 20px);width: 35px;height: 1px;background: #fff;}
                                 display: inline-block;font-size: 24px;margin-bottom: 20px;position: relative;
@@ -554,7 +555,7 @@ html, body, #content {
         
         #cnt5{
             @include borderbox; @include bgsize(cover);
-            background: url("../images/main/sec5_bg.jpg") no-repeat center;padding: 120px 0 0 80px;
+            background: url("../images/main/sec5_bg.jpg") no-repeat center;padding: 60px 0;
            text-align: center;
            h2{
                @include bgsize(cover);display: inline-block;
@@ -565,7 +566,7 @@ html, body, #content {
             ul{
                 text-align: center;
                 li{ 
-                    position: relative;display: inline-block;width: 151px;height: 135px;margin: 60px 50px 80px;
+                    position: relative;display: inline-block;width: 151px;height: 135px;margin: 60px 20px 80px;
                     @include bgsize(cover);
                     &::before{content:"";position: absolute;top: 0;left: 0;width: 100%;height: 100%; background: url("../images/main/cles_listbox.svg") no-repeat center;opacity: 0.7;}
                     &::after{content:"";position: absolute;right: 28px;bottom: 16px;width: 50px;height: 1px;background: #fff;}
@@ -575,9 +576,117 @@ html, body, #content {
             >a{display: inline-block;text-align: left;}
         }
     }
+    #cnt6{
+        @include borderbox;
+        height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
+        >div{float: left;height: 100%;}
+         #map{
+            @include borderbox;padding-top: 80px;width: 55%;
+            .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
+            .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
+            .overlay_info a {display: block; background: #d95050; background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center; text-decoration: none; color: #fff; padding:12px 36px 12px 14px; font-size: 14px; border-radius: 6px 6px 0 0}
+            .overlay_info a strong {background:url("../images/main/company_s1.png") no-repeat; padding-left: 27px;}
+            .overlay_info .desc {padding:14px;position: relative; min-width: 190px; height: 56px}
+            .overlay_info img {vertical-align: top;}
+            .overlay_info .address {font-size: 12px; color: #333; position: absolute; left: 80px; right: 14px; top: 24px; white-space: normal}
+            .overlay_info:after {content:'';position: absolute; margin-left: -11px; left: 50%; bottom: -12px; width: 22px; height: 12px; background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png) no-repeat 0 bottom;}
+            } 
+        .contact{
+            @include borderbox;
+            width: 45%;background: #43366d;padding: vw-calc-tablet(120) vw-calc-tablet(50) vw-calc-tablet(40);
+            h3{font-size: 50px;margin-bottom: vw-calc-tablet(40)}
+            ul li{
+                margin-bottom: vw-calc-tablet(35);
+                >*{float: left;}
+                >img{margin-right: vw-calc-tablet(30)}
+                img{width: 30px;}
+                .location_txt{
+                    p:first-of-type{line-height:vw-calc-tablet(24);margin-bottom:vw-calc-tablet(25)}
+                }
+                &:nth-of-type(2) p{font-size:vw-calc-tablet(24);letter-spacing: 1px;}
+                &:nth-of-type(3){
+                    a{display: inline-block;margin-right: vw-calc-tablet(25)}
+                    a:nth-of-type(1) img{width: vw-calc-tablet(32);height:  vw-calc-tablet(31);}
+                    a:nth-of-type(2) img{width: vw-calc-tablet(32);height:  vw-calc-tablet(30);}
+                    a:nth-of-type(3) img{width: vw-calc-tablet(32);height: vw-calc-tablet(27);margin-top: vw-calc-tablet(2);}
+                } 
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width:768px){
+    #cnt1{
+        height: 100vh;position: relative;z-index: 100;
+        .swiper-wrapper{
+            @include bgsize(cover);
+            .swiper-slide{
+                width: 100%;height: 100vh;
+                .slide_bg{
+                    @include transform(scale(1.4));
+                    @include transition(transform 8s);
+                    background: no-repeat center;width: 100%;height: 100%;position: absolute;top: 0;left: 0;
+                }
+                // #cnt1 .swiper-wrapper .swiper-slide.slide1 .slide_bg
+                &.slide1 .slide_bg{background-image:url("../images/main/m_main_visual01.jpg");}
+                &.slide2 .slide_bg{background-image:url("../images/main/m_main_visual02.jpg");}
+                &.slide3 .slide_bg{background-image:url("../images/main/m_main_visual03.jpg");}
+    
+                strong,p{position: absolute;}
+                strong{
+                    @include traDelay(1s);
+                    top:250px;left: 230px;font-size: 76px;letter-spacing: -2.5px;line-height: 100px;
+                }
+                p{
+                    @include traDelay(1.5s);
+                    top:535px;left: 480px;font-size: 20px;line-height: 40px;
+                }
+    
+                &.swiper-slide-active .slide_bg{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+        .controller{
+            position: absolute;bottom: 270px;left: 0;z-index: 10;width: 456px;height: 110px;background: #ffffff;     
+            .slide_timer{
+                position: absolute;top: 0;left: 0;width: 0%;height: 100%;background:#eee;
+            &.on{animation:timer-ani 8s infinite;}
+         }
+            
+            @keyframes timer-ani{
+                0%{width:0;}
+                100%{width:100%;}
+            }
+            .swiper-pagination-fraction{
+                @include translateY-50;
+                bottom: auto;top:50%;left: auto;right:54px;width: 120px; color: #aaa;
+                font-weight: 500;font-size: 14px;
+                .swiper-pagination-current{
+                    color: $purple;margin-right: 20px;
+                    &::before{content: "0"}
+                }
+                .swiper-pagination-total{
+                    margin-left: 20px;
+                    &::before{content: "0"}
+                }
+            }
+    
+            .swiper-button-prev::after, .swiper-button-next::after{display: none;}
+            .swiper-button-prev,.swiper-button-next{
+                @include translateY-50;
+                width: 19px;height: 20px;background:no-repeat center;display: block;
+                top: 50%; margin-top: 0;z-index: 10;cursor: pointer;
+            }
+            .swiper-button-prev{left:auto;right: 190px;background-image: url("../images/main/prev_btn.svg");}
+            .swiper-button-next{right: 20px;background-image: url("../images/main/next_btn.svg");}
+        }
+        .btn_more{
+            position: absolute;z-index: 10;
+            &.transparent{left: 210px;bottom: 120px;}
+            &.purple{right: 280px;bottom: 120px;}
+        }
+    }
     
 }

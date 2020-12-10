@@ -32,65 +32,64 @@ html, body, #content {
   overflow: hidden; }
 
 #cnt1 {
-  height: 100vh;
+  height: 100vh !important;
   position: relative;
   z-index: 100; }
-  #cnt1 .swiper-wrapper {
-    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    background-size: cover !important; }
-    #cnt1 .swiper-wrapper .swiper-slide {
+  #cnt1 .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100vh; }
+    #cnt1 .swiper-wrapper .swiper-slide .slide_bg {
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      background-size: cover !important;
+      -webkit-transform: scale(1.4);
+      -moz-transform: scale(1.4);
+      -o-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+      transform: scale(1.4);
+      -webkit-transition: transform 8s;
+      -moz-transition: transform 8s;
+      -o-transition: transform 8s;
+      transition: transform 8s;
+      background: no-repeat center;
       width: 100%;
-      height: 100vh; }
-      #cnt1 .swiper-wrapper .swiper-slide .slide_bg {
-        -webkit-transform: scale(1.4);
-        -moz-transform: scale(1.4);
-        -o-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-        transform: scale(1.4);
-        -webkit-transition: transform 8s;
-        -moz-transition: transform 8s;
-        -o-transition: transform 8s;
-        transition: transform 8s;
-        background: no-repeat center;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0; }
-      #cnt1 .swiper-wrapper .swiper-slide.slide1 .slide_bg {
-        background-image: url("../images/main/main_visual01.jpg"); }
-      #cnt1 .swiper-wrapper .swiper-slide.slide2 .slide_bg {
-        background-image: url("../images/main/main_visual02.jpg"); }
-      #cnt1 .swiper-wrapper .swiper-slide.slide3 .slide_bg {
-        background-image: url("../images/main/main_visual03.jpg"); }
-      #cnt1 .swiper-wrapper .swiper-slide strong, #cnt1 .swiper-wrapper .swiper-slide p {
-        position: absolute; }
-      #cnt1 .swiper-wrapper .swiper-slide strong {
-        -webkit-transition-delay: 1s;
-        -moz-transition-delay: 1s;
-        -o-transition-delay: 1s;
-        transition-delay: 1s;
-        top: 250px;
-        left: 230px;
-        font-size: 76px;
-        letter-spacing: -2.5px;
-        line-height: 100px; }
-      #cnt1 .swiper-wrapper .swiper-slide p {
-        -webkit-transition-delay: 1.5s;
-        -moz-transition-delay: 1.5s;
-        -o-transition-delay: 1.5s;
-        transition-delay: 1.5s;
-        top: 535px;
-        left: 480px;
-        font-size: 20px;
-        line-height: 40px; }
-      #cnt1 .swiper-wrapper .swiper-slide.swiper-slide-active .slide_bg {
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1); }
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    #cnt1 .swiper-wrapper .swiper-slide.slide1 .slide_bg {
+      background-image: url("../images/main/main_visual01.jpg"); }
+    #cnt1 .swiper-wrapper .swiper-slide.slide2 .slide_bg {
+      background-image: url("../images/main/main_visual02.jpg"); }
+    #cnt1 .swiper-wrapper .swiper-slide.slide3 .slide_bg {
+      background-image: url("../images/main/main_visual03.jpg"); }
+    #cnt1 .swiper-wrapper .swiper-slide strong, #cnt1 .swiper-wrapper .swiper-slide p {
+      position: absolute; }
+    #cnt1 .swiper-wrapper .swiper-slide strong {
+      -webkit-transition-delay: 1s;
+      -moz-transition-delay: 1s;
+      -o-transition-delay: 1s;
+      transition-delay: 1s;
+      top: 250px;
+      left: 230px;
+      font-size: 76px;
+      letter-spacing: -2.5px;
+      line-height: 100px; }
+    #cnt1 .swiper-wrapper .swiper-slide p {
+      -webkit-transition-delay: 1.5s;
+      -moz-transition-delay: 1.5s;
+      -o-transition-delay: 1.5s;
+      transition-delay: 1.5s;
+      top: 535px;
+      left: 480px;
+      font-size: 20px;
+      line-height: 40px; }
+    #cnt1 .swiper-wrapper .swiper-slide.swiper-slide-active .slide_bg {
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
   #cnt1 .controller {
     position: absolute;
     bottom: 270px;
@@ -895,7 +894,7 @@ html, body, #content {
       #cnt1 .btn_more.transparent {
         left: 2.5vw; }
       #cnt1 .btn_more.purple {
-        right: 6.6666666667vw; }
+        right: 10vw; }
 
   #cnt2 {
     padding-top: 12.5vw;
@@ -1083,7 +1082,7 @@ html, body, #content {
           position: static;
           left: auto;
           top: 0;
-          width: 800px;
+          width: 86.4166666667vw;
           height: 100%;
           margin: 0 auto; }
           #sec45 #cnt4 #serviceTab .tabpanel.active {
@@ -1120,12 +1119,12 @@ html, body, #content {
             background-size: cover !important;
             float: left;
             position: relative;
-            width: 250px;
-            height: 312px;
+            width: 26.8333333333vw;
+            height: 33.6666666667vw;
             background: no-repeat center;
             text-align: center;
             color: #ffffff;
-            padding-top: 220px; }
+            padding-top: 100px; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li::after {
               content: "";
               position: absolute;
@@ -1136,7 +1135,7 @@ html, body, #content {
               border: 1px solid rgba(255, 255, 255, 0.6);
               opacity: 0; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li + li {
-              margin-left: 25px; }
+              margin-left: 2.9166666667vw; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li strong {
               display: inline-block;
               font-size: 24px;
@@ -1224,7 +1223,7 @@ html, body, #content {
       -moz-background-size: cover !important;
       background-size: cover !important;
       background: url("../images/main/sec5_bg.jpg") no-repeat center;
-      padding: 120px 0 0 80px;
+      padding: 60px 0;
       text-align: center; }
       #sec45 #cnt5 h2 {
         -webkit-background-size: cover !important;
@@ -1252,7 +1251,7 @@ html, body, #content {
           display: inline-block;
           width: 151px;
           height: 135px;
-          margin: 60px 50px 80px;
+          margin: 60px 20px 80px;
           -webkit-background-size: cover !important;
           -moz-background-size: cover !important;
           background-size: cover !important; }
@@ -1280,6 +1279,247 @@ html, body, #content {
             font-size: 20px; }
       #sec45 #cnt5 > a {
         display: inline-block;
-        text-align: left; } }
+        text-align: left; }
+
+  #cnt6 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 63vh !important;
+    position: relative;
+    z-index: 100;
+    background: #ffffff; }
+    #cnt6 > div {
+      float: left;
+      height: 100%; }
+    #cnt6 #map {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-top: 80px;
+      width: 55%; }
+      #cnt6 #map .overlay_info {
+        border-radius: 6px;
+        margin-bottom: 12px;
+        float: left;
+        position: relative;
+        z-index: 10;
+        border: 1px solid #ccc;
+        border-bottom: 2px solid #ddd;
+        background-color: #fff; }
+      #cnt6 #map .overlay_info:nth-of-type(n) {
+        border: 0;
+        box-shadow: 0px 1px 2px #888; }
+      #cnt6 #map .overlay_info a {
+        display: block;
+        background: #d95050;
+        background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;
+        text-decoration: none;
+        color: #fff;
+        padding: 12px 36px 12px 14px;
+        font-size: 14px;
+        border-radius: 6px 6px 0 0; }
+      #cnt6 #map .overlay_info a strong {
+        background: url("../images/main/company_s1.png") no-repeat;
+        padding-left: 27px; }
+      #cnt6 #map .overlay_info .desc {
+        padding: 14px;
+        position: relative;
+        min-width: 190px;
+        height: 56px; }
+      #cnt6 #map .overlay_info img {
+        vertical-align: top; }
+      #cnt6 #map .overlay_info .address {
+        font-size: 12px;
+        color: #333;
+        position: absolute;
+        left: 80px;
+        right: 14px;
+        top: 24px;
+        white-space: normal; }
+      #cnt6 #map .overlay_info:after {
+        content: '';
+        position: absolute;
+        margin-left: -11px;
+        left: 50%;
+        bottom: -12px;
+        width: 22px;
+        height: 12px;
+        background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png) no-repeat 0 bottom; }
+    #cnt6 .contact {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 45%;
+      background: #43366d;
+      padding: 10vw 4.1666666667vw 3.3333333333vw; }
+      #cnt6 .contact h3 {
+        font-size: 50px;
+        margin-bottom: 3.3333333333vw; }
+      #cnt6 .contact ul li {
+        margin-bottom: 2.9166666667vw; }
+        #cnt6 .contact ul li > * {
+          float: left; }
+        #cnt6 .contact ul li > img {
+          margin-right: 2.5vw; }
+        #cnt6 .contact ul li img {
+          width: 30px; }
+        #cnt6 .contact ul li .location_txt p:first-of-type {
+          line-height: 2vw;
+          margin-bottom: 2.0833333333vw; }
+        #cnt6 .contact ul li:nth-of-type(2) p {
+          font-size: 2vw;
+          letter-spacing: 1px; }
+        #cnt6 .contact ul li:nth-of-type(3) a {
+          display: inline-block;
+          margin-right: 2.0833333333vw; }
+        #cnt6 .contact ul li:nth-of-type(3) a:nth-of-type(1) img {
+          width: 2.6666666667vw;
+          height: 2.5833333333vw; }
+        #cnt6 .contact ul li:nth-of-type(3) a:nth-of-type(2) img {
+          width: 2.6666666667vw;
+          height: 2.5vw; }
+        #cnt6 .contact ul li:nth-of-type(3) a:nth-of-type(3) img {
+          width: 2.6666666667vw;
+          height: 2.25vw;
+          margin-top: 0.1666666667vw; } }
+@media screen and (max-width: 768px) {
+  #cnt1 {
+    height: 100vh;
+    position: relative;
+    z-index: 100; }
+    #cnt1 .swiper-wrapper {
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      background-size: cover !important; }
+      #cnt1 .swiper-wrapper .swiper-slide {
+        width: 100%;
+        height: 100vh; }
+        #cnt1 .swiper-wrapper .swiper-slide .slide_bg {
+          -webkit-transform: scale(1.4);
+          -moz-transform: scale(1.4);
+          -o-transform: scale(1.4);
+          -ms-transform: scale(1.4);
+          transform: scale(1.4);
+          -webkit-transition: transform 8s;
+          -moz-transition: transform 8s;
+          -o-transition: transform 8s;
+          transition: transform 8s;
+          background: no-repeat center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        #cnt1 .swiper-wrapper .swiper-slide.slide1 .slide_bg {
+          background-image: url("../images/main/m_main_visual01.jpg"); }
+        #cnt1 .swiper-wrapper .swiper-slide.slide2 .slide_bg {
+          background-image: url("../images/main/m_main_visual02.jpg"); }
+        #cnt1 .swiper-wrapper .swiper-slide.slide3 .slide_bg {
+          background-image: url("../images/main/m_main_visual03.jpg"); }
+        #cnt1 .swiper-wrapper .swiper-slide strong, #cnt1 .swiper-wrapper .swiper-slide p {
+          position: absolute; }
+        #cnt1 .swiper-wrapper .swiper-slide strong {
+          -webkit-transition-delay: 1s;
+          -moz-transition-delay: 1s;
+          -o-transition-delay: 1s;
+          transition-delay: 1s;
+          top: 250px;
+          left: 230px;
+          font-size: 76px;
+          letter-spacing: -2.5px;
+          line-height: 100px; }
+        #cnt1 .swiper-wrapper .swiper-slide p {
+          -webkit-transition-delay: 1.5s;
+          -moz-transition-delay: 1.5s;
+          -o-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+          top: 535px;
+          left: 480px;
+          font-size: 20px;
+          line-height: 40px; }
+        #cnt1 .swiper-wrapper .swiper-slide.swiper-slide-active .slide_bg {
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1); }
+    #cnt1 .controller {
+      position: absolute;
+      bottom: 270px;
+      left: 0;
+      z-index: 10;
+      width: 456px;
+      height: 110px;
+      background: #ffffff; }
+      #cnt1 .controller .slide_timer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: #eee; }
+        #cnt1 .controller .slide_timer.on {
+          animation: timer-ani 8s infinite; }
+  @keyframes timer-ani {
+    0% {
+      width: 0; }
+    100% {
+      width: 100%; } }
+      #cnt1 .controller .swiper-pagination-fraction {
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        bottom: auto;
+        top: 50%;
+        left: auto;
+        right: 54px;
+        width: 120px;
+        color: #aaa;
+        font-weight: 500;
+        font-size: 14px; }
+        #cnt1 .controller .swiper-pagination-fraction .swiper-pagination-current {
+          color: #43366d;
+          margin-right: 20px; }
+          #cnt1 .controller .swiper-pagination-fraction .swiper-pagination-current::before {
+            content: "0"; }
+        #cnt1 .controller .swiper-pagination-fraction .swiper-pagination-total {
+          margin-left: 20px; }
+          #cnt1 .controller .swiper-pagination-fraction .swiper-pagination-total::before {
+            content: "0"; }
+      #cnt1 .controller .swiper-button-prev::after, #cnt1 .controller .swiper-button-next::after {
+        display: none; }
+      #cnt1 .controller .swiper-button-prev, #cnt1 .controller .swiper-button-next {
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 19px;
+        height: 20px;
+        background: no-repeat center;
+        display: block;
+        top: 50%;
+        margin-top: 0;
+        z-index: 10;
+        cursor: pointer; }
+      #cnt1 .controller .swiper-button-prev {
+        left: auto;
+        right: 190px;
+        background-image: url("../images/main/prev_btn.svg"); }
+      #cnt1 .controller .swiper-button-next {
+        right: 20px;
+        background-image: url("../images/main/next_btn.svg"); }
+    #cnt1 .btn_more {
+      position: absolute;
+      z-index: 10; }
+      #cnt1 .btn_more.transparent {
+        left: 210px;
+        bottom: 120px; }
+      #cnt1 .btn_more.purple {
+        right: 280px;
+        bottom: 120px; } }
 
 /*# sourceMappingURL=main.css.map */

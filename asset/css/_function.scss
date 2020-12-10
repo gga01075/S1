@@ -7,4 +7,11 @@
     $vwSize : $px / ($viewport / 100);
     @return #{$vwSize}vw;
 }
+
+@function vw-calc-mobile($px, $viewport:360){
+    $vwSize : $px / ($viewport / 100);
+    @return #{$vwSize}vw;
+}
+
+
     
