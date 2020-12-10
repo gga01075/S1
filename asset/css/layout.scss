@@ -130,6 +130,11 @@
         }
 
     }
+    .scroll_btn{
+        img{
+            @include transform(rotate(180deg));
+        }
+    }
 }
 
 @media screen and (max-width:1366px){

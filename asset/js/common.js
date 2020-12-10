@@ -134,11 +134,6 @@ $(document).ready(function(){
         });
     });
 
-
-
-
-
-
     //투명 버튼 호버 또는 포커스 효과
     $('.btn_more.transparent').on({
         'mouseenter focus':function(){
@@ -158,17 +153,6 @@ $(document).ready(function(){
             $(this).find('.btn_arrow').stop().animate({right: 30},300).prev().stop().animate({width:'0%'});
         }
     });
-
-
-
-
-
-
-
-
-
-
-
 
 
     //패밀리사이트
@@ -208,18 +192,11 @@ $(document).ready(function(){
 	//3) 확인버튼 눌러 페이지 이동시키기
 	_go.on('click',function  (e) {
 		e.preventDefault();
-		if (_btn.text()=='Family Site') return false;
+        if (_btn.text() ==='패밀리사이트') return false;
 
 		//window.open('열려질 새창의 경로명','팝업창 이름','옵션');
 		window.open(tgHref, 'popup');
     });
-    
-
-
-
-
-
-
 
 
 
