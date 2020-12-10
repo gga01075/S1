@@ -14,13 +14,15 @@
     z-index: 500; }
     .header .logo a {
       display: block;
-      width: 120px; }
+      width: 120px;
+      height: 40px;
+      line-height: 40px; }
       .header .logo a img {
         width: 60px;
-        height: 40px; }
+        height: 100%; }
       .header .logo a span {
         display: inline-block;
-        padding-top: 15px; }
+        vertical-align: top; }
   .header .util {
     position: absolute;
     top: 30px;
@@ -275,8 +277,7 @@
         #mHeader .logo a img {
           width: 45px; }
         #mHeader .logo a span {
-          display: inline-block;
-          padding-top: 15px; }
+          display: inline-block; }
     #mHeader .gnb_open_btn {
       position: absolute;
       top: 20px;

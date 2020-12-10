@@ -680,6 +680,12 @@ html, body, #content {
         background-image: url("../images/main/sec4_solution_company2.jpg"); }
       #sec45 #cnt4 #serviceTab #tabpanel3 ul li:nth-of-type(3) {
         background-image: url("../images/main/sec4_solution_company3.jpg"); }
+    #sec45 #cnt4 .scroll_btn img {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
   #sec45 #cnt5 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

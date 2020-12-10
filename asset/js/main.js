@@ -9,6 +9,8 @@ $(document).ready(function () {
   var swiper_timer = 0;
   var delta;
   var mtMax = -($('#cnt2 .list_wrap').outerHeight() - _win.height() + 100);
+  var isNext = false;
+
   //본문2 비전과미션 휠제어시 margin-top값 지정
   //console.log($('#cnt2 .list_wrap').outerHeight(), _win.height(), mtMax);
   var marginT = 0;  //$('#cnt2 .list_wrap')의 margin-top
@@ -98,6 +100,11 @@ $(document).ready(function () {
 
   //본문2(margin-top), 본문 4/5(수평 animate)에서 제어
   function subWheel() {
+    if(isNext === true && tgIdx ===1){
+      onePageScrolling();
+      isNext = false;
+      return false;
+    }
     console.log('subWheel()');
     if (tgIdx === 1) {
       marginT = marginT + delta * 1.3;
@@ -140,6 +147,27 @@ $(document).ready(function () {
       }
     }
   }
+
+  //각 섹션의 스크롤 버튼, #footer의 스크롤버튼 클릭시 섹션이동
+  //cnt의 스크롤 버튼은 다음섹션, footer의 스크롤 버튼은 최상단으로 이동
+  $('.cnt .scroll_btn').on('click',function(){
+     delta = -120;
+     isNext = true;
+     if ($(this).closest('.tg').hasClass('subwheel')) {
+      subWheel();
+    } else {
+      onePageScrolling();
+    }
+  });
+
+  $('#footer .scroll_btn').on('click',function(){
+              tgIdx=0;
+              $('#footer').css({'z-index':90}).stop().fadeOut('fast');
+              $('.tg').stop().animate({top: -(tgIdx*100) + '%'},100);
+              $('#footer').css({top: -37 +(-(tgIdx*100)) + 'vh'},100); 
+              $('#pcHeader .logo a').focus(); 
+  });
+
 
   //index section1 슬라이드
   var mySwiper1 = new Swiper('#cnt1 .swiper-container', {
