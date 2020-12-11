@@ -247,12 +247,12 @@ html, body, #content {
     section{float: left;position: relative;z-index: 100;width: 50%;height: 100vh;}
     #cnt4{
         @include borderbox;
-        background: #fff;color: #000;padding: 120px 0 0 80px;overflow: hidden;
+        background: #fff;color: #000;padding: 120px 0 0 0px;overflow: hidden;
         #serviceTab{
-            @include borderbox;height: 100%;position: relative;
+            @include borderbox;height: 100%;position: relative;width: 1480px;
             .tablist{
                 @include translateY-50;
-                position: absolute;left: 100px;top: 50%;width: 140px;height: 180px;
+                position: absolute;left: 60px;top: 50%;width: 140px;height: 180px;
                 .tab{
                     @include transition(all .3s);
                     font-size: 18px;margin-bottom: 40px;cursor:pointer;overflow: hidden;text-indent: -16px;
@@ -261,7 +261,7 @@ html, body, #content {
                 }
             }
             .tabpanel{
-                display: none;position: absolute;left: 250px;top: 0;width: 1480px;height: 100%;
+                display: none;position: relative;left: 250px;top: 0;height: 100%;width: 100%;
                 &.active{display: block;}
                 >p:first-of-type{
                     font-size: 30px;color: #4d3074;font-weight: 600;letter-spacing: 2px;margin-bottom: 10px;
@@ -270,15 +270,16 @@ html, body, #content {
                 >strong{font-size: 60px;letter-spacing: -3px;}
                 >p:last-of-type{font-size: 18px;margin-top: 10px;margin-bottom: 50px;}
                 ul{ 
+                    height: 100%;
                     li,li::after,strong::before,a{
                         @include transition(all .7s);
                     }
                     li{
                         @include borderbox;
                         @include bgsize(cover);
-                        float: left;position: relative;width: 400px;height: 500px;background:no-repeat center;text-align: center;color: #ffffff;padding-top: 220px;
-                        &::after{content:"";position: absolute;top: 8px;left: 8px;width: 380px;height:480px;border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
-                        +li{margin-left: 40px;}
+                        float: left;position: relative;width:vw-calc-pc(400);height:vw-calc-pc(500);background:no-repeat center;text-align: center;color: #ffffff;padding-top: vw-calc-pc(220);
+                        &::after{content:"";position: absolute;top: 8px;left: 8px;width: vw-calc-pc(380);height:vw-calc-pc(480);border: 1px solid rgba(255, 255, 255,.6);opacity: 0;}
+                        +li{margin-left: vw-calc-pc(40);}
                         strong{
                             &::before{content:"";position: absolute;top: -30px;left: calc(50% - 20px);width: 35px;height: 1px;background: #fff;}
                             display: inline-block;font-size: 24px;margin-bottom: 20px;position: relative;
@@ -297,7 +298,7 @@ html, body, #content {
                     }
                     li.on{
                         &::after{opacity: 1;}
-                        padding-top: 140px;
+                        padding-top:vw-calc-pc(140);
                         strong::before{opacity: 0;}
                         a{display: inline-block;opacity: 1;}
                     }
@@ -483,23 +484,30 @@ html, body, #content {
         width: 100%;height:auto;
         section{float: none;position: relative;width: 100%;height: auto;}
         #cnt4{
-            padding: 60px 0 300px 0;
+            padding: 100px 0 220px 0;
             #serviceTab{
-                @include borderbox;height: 100%;
+                @include borderbox;width: 100%;height: 100%;
                 .tablist{
                     @include translateX-50;
-                    position: absolute;left: 50%;top: auto;bottom:50px;width: 400px;height: 30px;text-align: center;
+                    position: absolute;left: 50%;top: auto;bottom:-120px;width: 400px;height: 30px;text-align: center;
                     .tab{
                         @include transition(all .3s);
-                        height: 100%;display: inline-block;
-                        font-size: 18px;margin-bottom: 40px;cursor:pointer;overflow: auto;text-indent: 0px;
+                        height: 100%;display: inline-block;position: relative;
+                        font-size: 18px;margin-bottom: 40px;cursor:pointer;overflow: visible;text-indent: 0px;
                         span{position: relative;top: -2px;margin-right: 4px;font-size: 14px;font-weight: 700;color: #4d3074;display: none;}
-                        &.active{font-weight: 700;}
+                        &::after{
+                            @include radius(50%);
+                            content:"";position: absolute;top: -14px;left: calc(50% - 3.5px);width: 7px;height: 7px;background: #4d3074;display: none;
+                        }
+                        &.active{
+                            font-weight: 700;
+                            &::after{display: block;}
+                        }
                         +.tab{margin-left: 30px;}
                     }
                 }
                 .tabpanel{
-                    display: none;position: static;left: auto;top: 0;width:vw-calc-tablet(1037);height: 100%;margin: 0 auto;
+                    display: none;position: relative;left: auto;top: 0;width:vw-calc-tablet(1037);height: 100%;margin: 0 auto;
                     &.active{display: block;}
                     >p:first-of-type{
                         font-size: 30px;color: #4d3074;font-weight: 600;letter-spacing: 2px;margin-bottom: 10px;
@@ -508,6 +516,7 @@ html, body, #content {
                     >strong{font-size: 60px;letter-spacing: -3px;}
                     >p:last-of-type{font-size: 18px;margin-top: 10px;margin-bottom: 50px;}
                     ul{ 
+                        &::after{content:"";display: block;clear: both;}
                         li,li::after,strong::before,a{
                             @include transition(all .7s);
                         }
@@ -555,7 +564,7 @@ html, body, #content {
         
         #cnt5{
             @include borderbox; @include bgsize(cover);
-            background: url("../images/main/sec5_bg.jpg") no-repeat center;padding: 60px 0;
+            background: url("../images/main/sec5_bg.jpg") no-repeat center;padding: 100px 0;
            text-align: center;
            h2{
                @include bgsize(cover);display: inline-block;

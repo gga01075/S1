@@ -173,8 +173,9 @@
                     strong{font-size: 20px;}
                     p{font-size: 30px;font-weight:700;margin: 10px 0 15px;}
                     .m_counsel{
-                        @include radius(8px);margin-left: 15px;
+                        @include radius(8px);
                         display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;
+                        +.m_counsel{margin-left: 15px;}
                     } 
                 }
             }
@@ -313,18 +314,19 @@
         }
         .menubar, #dim{position: fixed;z-index: 900;top: 0;height: 100vh;}
         .menubar{
-            display: none;right: 0;width: 100%;background: #fff;
+            display: none;right: 0;width: 100%;background: #fff;overflow-y:scroll;
             .menu_left{
                 @include borderbox;
-                width: 55%;height: 200px;text-align:right;padding-top: 20px;margin-bottom: 70px;
+                width: 100%;height: auto;text-align:right;padding-top: 20px;margin-bottom: 40px;
                 .call{
                     @include borderbox;
-                    padding: 0 40px 0 50px;
+                    padding: 0 40px 0 50px;text-align: left;
                     strong{font-size: 20px;}
                     p{font-size: 30px;font-weight:700;margin: 10px 0 15px;}
                     .m_counsel{
-                        @include radius(8px);margin-left: 15px;
+                        @include radius(8px);
                         display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;
+                        +.m_counsel{margin-left: 15px;}
                     } 
                 }
             }
@@ -334,8 +336,8 @@
                 >ul{
                     position: relative;
                     >li{
-                        @include borderbox;padding-right: vw-calc-tablet(40);width: 55%;
-                        margin-bottom: vw-calc-tablet(50);text-align: right;
+                        @include borderbox;padding-right: 0;width: 100%;
+                        margin-bottom: vw-calc-tablet(50);text-align: left;
                         &.on a{
                             color: #000;
                             &::before{
@@ -343,19 +345,19 @@
                             }
                         }
                         >a{
-                            font-size:vw-calc-tablet(45);font-weight: 800;position: relative;color: #43366d;
+                            font-size:vw-calc-tablet(80);font-weight: 800;position: relative;color: #43366d;padding-left: 50px;
                             &::before{
                                 @include transform(scale(0));@include transition(all .3s);
-                                content:"";position: absolute;bottom: vw-calc-tablet(-3);left: 0;width: 100%;height: vw-calc-tablet(2);background: #000;
+                                content:"";position: absolute;bottom: vw-calc-tablet(-3);left: 0;width: 100%;height: vw-calc-tablet(2);background: #000;display: none;
                             }
                         }
                         >.dep2{
-                            position: absolute;top: auto;right: 0;width:45%;margin-top: vw-calc-tablet(-30);text-align: left;display: none;
+                            position: relative;top: 20px;right: auto;left:0;width:100%;margin-top: 0;text-align: left;display: none;background: #e7dcf0; padding: 20px 0 20px 35px;
                             >li{
-                                margin-bottom: vw-calc-tablet(22);
+                                margin-bottom: vw-calc-tablet(30);
                                 >a{
                                     @include borderbox;
-                                    font-size: vw-calc-tablet(18);font-weight: 600;display: inline-block;padding-left: vw-calc-tablet(40);}
+                                    font-size: vw-calc-tablet(40);font-weight: 600;display: inline-block;padding-left: vw-calc-tablet(40);}
                             }
                         }
                     }
