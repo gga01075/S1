@@ -79,7 +79,7 @@
             </ul>
             <div class="dep2_bg">
                 <div class="dep1_txt">
-                    <img src="" alt=" ">
+                    <img src="" alt="">
                     <p></p>
                 </div>
             </div>
@@ -183,6 +183,10 @@
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
                 
+                    <!-- play,stop button -->
+                    <button type="button" class="stop_play stop"></button>
+                    <button type="button" class="stop_play play"></button>
+
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -403,8 +407,10 @@
         </div>
         <section id="cnt6" class="cnt tg">
             <h2 class="blind_b">에스원 위치 및 연락처</h2>
-            <div id="map"></div>
-         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26d09b8c72ac42266fa1c594bbe0255b"></script>
+            <article id="map">
+                <h3 class="blind_b">에스원 지도</h3>
+            </article>
+       <!--   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26d09b8c72ac42266fa1c594bbe0255b"></script>
             <script>
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                 mapOption = { 
@@ -445,8 +451,8 @@
             }
             setZoomable(false); //확대 못하게 막음
             
-            </script> 
-            <div class="contact">
+            </script>  -->
+            <article class="contact">
                 <h3>CONTACT</h3>
                 <ul>
                     <li>
@@ -468,7 +474,7 @@
                         <a href="#"><img src="asset/images/main/sec6_youtube.svg" alt="유튜브"></a>
                     </li>
                 </ul>
-            </div>
+            </article>
         </section>
     </div>
     <footer id="footer">

@@ -97,7 +97,11 @@ html, body, #content {
     z-index: 10;
     width: 456px;
     height: 110px;
-    background: #ffffff; }
+    background: #ffffff;
+    /*         @keyframes timer-ani{
+                0%{width:0;}
+                100%{width:100%;}
+            } */ }
     #cnt1 .controller .slide_timer {
       position: absolute;
       top: 0;
@@ -107,11 +111,27 @@ html, body, #content {
       background: #eee; }
       #cnt1 .controller .slide_timer.on {
         animation: timer-ani 8s infinite; }
-@keyframes timer-ani {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
+    #cnt1 .controller .stop_play {
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      background-size: cover !important;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right: 220px;
+      z-index: 10;
+      width: 20px;
+      height: 21px;
+      background: no-repeat center; }
+      #cnt1 .controller .stop_play.stop {
+        background-image: url("../images/main/pause_button.svg"); }
+      #cnt1 .controller .stop_play.play {
+        background-image: url("../images/main/play_button.svg");
+        display: none; }
     #cnt1 .controller .swiper-pagination-fraction {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
@@ -762,7 +782,7 @@ html, body, #content {
   position: relative;
   z-index: 100;
   background: #ffffff; }
-  #cnt6 > div {
+  #cnt6 > article {
     float: left;
     height: 100%; }
   #cnt6 #map {
@@ -1312,7 +1332,7 @@ html, body, #content {
     position: relative;
     z-index: 100;
     background: #ffffff; }
-    #cnt6 > div {
+    #cnt6 > article {
       float: left;
       height: 100%; }
     #cnt6 #map {

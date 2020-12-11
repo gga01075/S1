@@ -56,7 +56,7 @@
             position: absolute;top: 80px;left:0;z-index: 50;width: 100%;opacity: 0.95;height:319px;background: url("../images/layout/menu_open_bg.png") no-repeat center / cover;
             .dep1_txt{
                 @include translateY-50;
-                position: absolute;top: 45%;left: 13.75vw;
+                position: absolute;top: 45%;left: 13.75vw;display: none;
                 img{float: left;width:vw-calc-pc(55);height:vw-calc-pc(50);}
                 p{float: left;font-weight: 700;font-size: vw-calc-pc(40);padding-top: 10px;letter-spacing: -1.3px;}
             }

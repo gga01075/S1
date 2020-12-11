@@ -198,18 +198,29 @@ $(document).ready(function () {
     },
 
     on: {
-      slideChange:function(){
+/*       slideChange:function(){
         $('#cnt1 .controller .slide_timer').removeClass('on');
         setTimeout(function(){
           $('#cnt1 .controller .slide_timer').addClass('on');
         },1)
-      },
+      }, */
       slideChangeTransitionStart: function () {
         $('.swiper-slide').find('strong,p').removeClass('in');
         $('.swiper-slide-active').find('strong,p').addClass('in');
       },
     }
   });
+
+  $('#cnt1 .controller .stop').on('click',function(){
+    $(this).hide().siblings().show();
+    mySwiper1.autoplay.stop();
+  });
+
+  $('#cnt1 .controller .play').on('click',function(){
+    $(this).hide().siblings().show();
+    mySwiper1.autoplay.start();
+  });
+
 
   /* section4 탭브라우징 제어 */
 

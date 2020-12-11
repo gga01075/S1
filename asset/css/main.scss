@@ -52,12 +52,19 @@ html, body, #content {
         .slide_timer{
             position: absolute;top: 0;left: 0;width: 0%;height: 100%;background:#eee;
         &.on{animation:timer-ani 8s infinite;}
-     }
-        
-        @keyframes timer-ani{
+     } 
+/*         @keyframes timer-ani{
             0%{width:0;}
             100%{width:100%;}
+        } */
+
+        .stop_play{
+            @include bgsize(cover);@include translateY-50;
+            position: absolute;top: 50%;right: 220px;z-index: 10;width: 20px;height: 21px;background: no-repeat center;
+            &.stop{background-image: url("../images/main/pause_button.svg");}
+            &.play{background-image: url("../images/main/play_button.svg");display: none;}
         }
+
         .swiper-pagination-fraction{
             @include translateY-50;
             bottom: auto;top:50%;left: auto;right:54px;width: 120px; color: #aaa;
@@ -347,7 +354,7 @@ html, body, #content {
 #cnt6{
     @include borderbox;
     height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
-    >div{float: left;height: 100%;}
+    >article{float: left;height: 100%;}
      #map{
         @include borderbox;padding-top: 80px;width: 66%;
         .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
@@ -588,7 +595,7 @@ html, body, #content {
     #cnt6{
         @include borderbox;
         height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
-        >div{float: left;height: 100%;}
+        >article{float: left;height: 100%;}
          #map{
             @include borderbox;padding-top: 80px;width: 55%;
             .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}

@@ -115,7 +115,8 @@
         transform: translateY(-50%);
         position: absolute;
         top: 45%;
-        left: 13.75vw; }
+        left: 13.75vw;
+        display: none; }
         #pcHeader #pcGnb .dep2_bg .dep1_txt img {
           float: left;
           width: 2.8645833333vw;
