@@ -169,13 +169,13 @@
                 width: 55%;height: 200px;text-align:right;padding-top: 20px;margin-bottom: 70px;
                 .call{
                     @include borderbox;
-                    padding: 0 40px 0 50px;
+                    padding: 0 35px 0 0;
                     strong{font-size: 20px;}
                     p{font-size: 30px;font-weight:700;margin: 10px 0 15px;}
                     .m_counsel{
                         @include radius(8px);
                         display: inline-block;width: 135px;height: 45px;text-align: center;line-height: 45px;background: #43366d;color: #fff;
-                        +.m_counsel{margin-left: 15px;}
+                        +.m_counsel{margin-left: 5px;}
                     } 
                 }
             }

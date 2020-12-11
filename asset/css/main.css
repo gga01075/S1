@@ -1331,7 +1331,8 @@ html, body, #content {
     height: 63vh !important;
     position: relative;
     z-index: 100;
-    background: #ffffff; }
+    background: #ffffff;
+    max-height: 480px; }
     #cnt6 > article {
       float: left;
       height: 100%; }
@@ -1395,7 +1396,7 @@ html, body, #content {
       box-sizing: border-box;
       width: 45%;
       background: #43366d;
-      padding: 10vw 4.1666666667vw 3.3333333333vw; }
+      padding: 5.8333333333vw 4.1666666667vw 3.3333333333vw; }
       #cnt6 .contact h3 {
         font-size: 50px;
         margin-bottom: 3.3333333333vw; }

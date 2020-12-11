@@ -594,7 +594,7 @@ html, body, #content {
     }
     #cnt6{
         @include borderbox;
-        height: 63vh !important;position: relative;z-index: 100;background: #ffffff;
+        height: 63vh !important;position: relative;z-index: 100;background: #ffffff;max-height:480px;
         >article{float: left;height: 100%;}
          #map{
             @include borderbox;padding-top: 80px;width: 55%;
@@ -609,7 +609,7 @@ html, body, #content {
             } 
         .contact{
             @include borderbox;
-            width: 45%;background: #43366d;padding: vw-calc-tablet(120) vw-calc-tablet(50) vw-calc-tablet(40);
+            width: 45%;background: #43366d;padding: vw-calc-tablet(70) vw-calc-tablet(50) vw-calc-tablet(40);
             h3{font-size: 50px;margin-bottom: vw-calc-tablet(40)}
             ul li{
                 margin-bottom: vw-calc-tablet(35);

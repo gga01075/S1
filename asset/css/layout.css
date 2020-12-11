@@ -320,7 +320,7 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
-          padding: 0 40px 0 50px; }
+          padding: 0 35px 0 0; }
           #mHeader .menubar .menu_left .call strong {
             font-size: 20px; }
           #mHeader .menubar .menu_left .call p {
@@ -339,7 +339,7 @@
             background: #43366d;
             color: #fff; }
             #mHeader .menubar .menu_left .call .m_counsel + .m_counsel {
-              margin-left: 15px; }
+              margin-left: 5px; }
       #mHeader .menubar #mGnb {
         height: calc(100vh - vw-calc-tablet(200)); }
         #mHeader .menubar #mGnb a {
