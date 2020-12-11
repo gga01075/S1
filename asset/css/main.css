@@ -1128,12 +1128,12 @@ html, body, #content {
             #sec45 #cnt4 #serviceTab .tabpanel ul li::after {
               content: "";
               position: absolute;
-              top: 8px;
-              left: 8px;
-              width: 230px;
-              height: 292px;
+              top: 0.4166666667vw;
+              left: 0.4166666667vw;
+              width: 26vw;
+              height: 32.8333333333vw;
               border: 1px solid rgba(255, 255, 255, 0.6);
-              opacity: 0; }
+              opacity: 1; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li + li {
               margin-left: 2.9166666667vw; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li strong {
@@ -1163,8 +1163,8 @@ html, body, #content {
               position: relative;
               z-index: 10;
               overflow: hidden;
-              display: none;
-              opacity: 0; }
+              display: inline-block;
+              opacity: 1; }
               #sec45 #cnt4 #serviceTab .tabpanel ul li a span {
                 position: relative;
                 z-index: 1; }
@@ -1189,7 +1189,7 @@ html, body, #content {
                 top: -80px;
                 left: -80px; }
           #sec45 #cnt4 #serviceTab .tabpanel ul li.on {
-            padding-top: 140px; }
+            padding-top: 100px; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li.on::after {
               opacity: 1; }
             #sec45 #cnt4 #serviceTab .tabpanel ul li.on strong::before {
