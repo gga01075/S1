@@ -1877,7 +1877,11 @@ html, body, #content {
             margin-top: 2.7777777778vw;
             margin-bottom: 8.3333333333vw; }
           #sec45 #cnt4 #serviceTab .tabpanel .swiper_box {
-            overflow-x: auto; }
+            overflow-x: auto;
+            width: 90vw;
+            -ms-overflow-style: none; }
+            #sec45 #cnt4 #serviceTab .tabpanel .swiper_box::-webkit-scrollbar {
+              display: none !important; }
           #sec45 #cnt4 #serviceTab .tabpanel ul {
             width: 179.4444444444vw; }
             #sec45 #cnt4 #serviceTab .tabpanel ul::after {

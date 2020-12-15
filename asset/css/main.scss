@@ -853,7 +853,12 @@ html, body, #content {
                     }
                     >strong{font-size:vw-calc-mobile(38);letter-spacing: vw-calc-mobile(-3);}
                     >p:last-of-type{font-size: vw-calc-mobile(14);margin-top: vw-calc-mobile(10);margin-bottom: vw-calc-mobile(30);}
-                    .swiper_box{overflow-x:auto;}
+                    .swiper_box{overflow-x:auto;width: 90vw;
+                        -ms-overflow-style: none; // IE에서 스크롤바 감춤
+                        &::-webkit-scrollbar { 
+                          display: none !important; // 윈도우 크롬 등
+                        }
+                    }
                     ul{ 
                         width: vw-calc-mobile(646);
                         &::after{content:"";display: block;clear: both;}
