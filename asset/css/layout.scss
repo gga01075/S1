@@ -400,13 +400,13 @@
         .info{
             margin-right: 0;width: 100%;
             ul li{
-                margin-bottom: vw-calc-mobile(20);
+                margin-bottom: vw-calc-mobile(10);
                 span{
                     display: inline-block;margin-right: vw-calc-mobile(20);position: relative;
                     &:nth-of-type(2)::before{left: vw-calc-mobile(-12);top:vw-calc-mobile(2);width:vw-calc-mobile(1);height:vw-calc-mobile(13);}
                 }
             }
-            p{margin: vw-calc-mobile(40) 0;}
+            p{margin: vw-calc-mobile(30) 0 vw-calc-mobile(25);}
         }
         .footer_right{
             width:100%;margin-top:vw-calc-mobile(20);padding-bottom:vw-calc-mobile(50);
@@ -418,7 +418,7 @@
                 }
             }
             .family{
-                line-height:vw-calc-mobile(33);color: #333;position: relative;
+                line-height:vw-calc-mobile(33);color: #333;position: relative;margin-top: 30px;
                 >*{
                     @include borderbox;
                     border: vw-calc-mobile(1) solid #989898;padding-left: vw-calc-mobile(10);

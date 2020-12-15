@@ -753,7 +753,7 @@
       margin-right: 0;
       width: 100%; }
       #footer .info ul li {
-        margin-bottom: 5.5555555556vw; }
+        margin-bottom: 2.7777777778vw; }
         #footer .info ul li span {
           display: inline-block;
           margin-right: 5.5555555556vw;
@@ -764,7 +764,7 @@
             width: 0.2777777778vw;
             height: 3.6111111111vw; }
       #footer .info p {
-        margin: 11.1111111111vw 0; }
+        margin: 8.3333333333vw 0 6.9444444444vw; }
     #footer .footer_right {
       width: 100%;
       margin-top: 5.5555555556vw;
@@ -779,7 +779,8 @@
       #footer .footer_right .family {
         line-height: 9.1666666667vw;
         color: #333;
-        position: relative; }
+        position: relative;
+        margin-top: 30px; }
         #footer .footer_right .family > * {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
