@@ -24,12 +24,12 @@ $(document).ready(function () {
         if(win_width>=1367){
           //css에서 transition처리
           $('.tg').css({top: -(tgIdx*100) + '%'});
-          $('#footer').css({top: -37 +(-(tgIdx*100)) + 'vh'});  
+          $('#footer').css({top: -37 +(-(tgIdx*100)) + 'vh','z-index':90});  
         }
         //태블릿,모바일 버전 ==> 마우스휠 이벤트 제거, 위치 제자리로 
         else if(win_width<1367){ 
           $('.tg').removeAttr('style');
-          $('#footer').css({top:0});
+          $('#footer').css({top:0,'z-index':100});
         }
       }, 50);
     });
