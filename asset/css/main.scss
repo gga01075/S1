@@ -268,8 +268,9 @@ html, body, #content {
                 }
             }
             .tabpanel{
-                display: none;position: relative;left: 250px;top: 0;height: 100%;width: 100%;
-                &.active{display: block;}
+                @include transition(all .4s);
+                visibility:hidden;opacity: 0;position: absolute;left: 250px;top: 0;height: 100%;width: 100%;
+                &.active{visibility:visible;opacity: 1;}
                 >p:first-of-type{
                     font-size: 30px;color: #4d3074;font-weight: 600;letter-spacing: 2px;margin-bottom: 10px;
                     span{font-size: 46px;font-weight: 600;display: inline-block;margin-left: 5px;}
@@ -353,10 +354,11 @@ html, body, #content {
 
 #cnt6{
     @include borderbox;
-    height: 63vh;position: relative;z-index: 100;background: #ffffff;
+    position: relative;z-index: 100;background: #ffffff;
     >article{float: left;height: 100%;}
+    @at-root #content #cnt6{height: 63vh;}
      #map{
-        @include borderbox;padding-top: 80px;width: 66%;
+        @include borderbox;padding-top: 0;width: 66%;
         .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
         .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
         .overlay_info a {display: block; background: #d95050; background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center; text-decoration: none; color: #fff; padding:12px 36px 12px 14px; font-size: 14px; border-radius: 6px 6px 0 0}
@@ -597,7 +599,7 @@ html, body, #content {
         height: 63vh;position: relative;z-index: 100;background: #ffffff;max-height:480px;
         >article{float: left;height: 100%;}
          #map{
-            @include borderbox;padding-top: 80px;width: 55%;
+            @include borderbox;width: 55%;height: 100%;
             .overlay_info {border-radius: 6px; margin-bottom: 12px; float:left;position: relative; z-index: 10;border: 1px solid #ccc; border-bottom: 2px solid #ddd;background-color:#fff;}
             .overlay_info:nth-of-type(n) {border:0; box-shadow: 0px 1px 2px #888;}
             .overlay_info a {display: block; background: #d95050; background: #d95050 url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png") no-repeat right 14px center; text-decoration: none; color: #fff; padding:12px 36px 12px 14px; font-size: 14px; border-radius: 6px 6px 0 0}
@@ -851,7 +853,9 @@ html, body, #content {
                     }
                     >strong{font-size:vw-calc-mobile(38);letter-spacing: vw-calc-mobile(-3);}
                     >p:last-of-type{font-size: vw-calc-mobile(14);margin-top: vw-calc-mobile(10);margin-bottom: vw-calc-mobile(30);}
+                    .swiper_box{overflow-x:auto;}
                     ul{ 
+                        width: vw-calc-mobile(646);
                         &::after{content:"";display: block;clear: both;}
                         li,li::after,strong::before,a{
                             @include transition(all .7s);
@@ -925,7 +929,8 @@ html, body, #content {
     }
     #cnt6{
         @include borderbox;
-        height: auto;position: relative;z-index: 100;background: #ffffff;max-height:none;
+       position: relative;z-index: 100;background: #ffffff;max-height:none;
+        @at-root #content #cnt6{ height: auto;}
         >article{float: none;height:auto;}
          #map{
             @include borderbox;padding-top:0;width: 100%;height: 40vh;
