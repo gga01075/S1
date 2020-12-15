@@ -29,10 +29,10 @@
     right: 80px;
     z-index: 500; }
     .header .util ul li {
-      float: left; }
+      float: left;
+      font-size: 14px; }
       .header .util ul li + li {
-        margin-left: 25px;
-        font-size: 14px; }
+        margin-left: 25px; }
 
 .header.on {
   background: #060415; }
@@ -546,37 +546,71 @@
       -ms-transform: rotate(180deg);
       transform: rotate(180deg); } }
 @media screen and (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 900; }
+    .header .logo {
+      position: absolute;
+      z-index: 500; }
+      .header .logo a {
+        display: block;
+        width: 140px;
+        height: 40px;
+        line-height: 40px; }
+        .header .logo a img {
+          width: 60px;
+          height: 100%; }
+        .header .logo a span {
+          display: inline-block;
+          vertical-align: top; }
+    .header .util {
+      position: absolute;
+      top: 30px;
+      right: 80px;
+      z-index: 500; }
+      .header .util ul li {
+        float: left; }
+        .header .util ul li + li {
+          margin-left: 25px;
+          font-size: 14px; }
+
   #mHeader {
     display: block; }
     #mHeader .logo {
       position: absolute;
-      top: 20px;
-      left: 60px;
-      z-index: 10; }
+      top: 10px;
+      left: 20px;
+      z-index: 10;
+      font-size: 14px; }
       #mHeader .logo a {
         display: block;
-        width: 120px; }
+        width: 80px; }
         #mHeader .logo a img {
-          width: 45px; }
+          width: 35px; }
         #mHeader .logo a span {
           display: inline-block;
-          padding-top: 15px; }
+          padding-top: 15px;
+          visibility: hidden; }
     #mHeader .gnb_open_btn {
       position: absolute;
-      top: 20px;
-      right: 40px;
-      width: 32px;
+      top: 15px;
+      right: 20px;
+      width: 28px;
       height: 30px;
       background: url("../images/layout/m_menuBtn.png") no-repeat center; }
     #mHeader .util {
       position: absolute;
-      top: 30px;
-      right: 110px; }
+      top: 25px;
+      right: 70px; }
       #mHeader .util ul li {
         float: left; }
         #mHeader .util ul li + li {
-          margin-left: 25px;
-          font-size: 18px; }
+          margin-left: 20px;
+          font-size: 14px; }
     #mHeader .menubar, #mHeader #dim {
       position: fixed;
       z-index: 900;
@@ -596,12 +630,12 @@
         height: auto;
         text-align: right;
         padding-top: 20px;
-        margin-bottom: 40px; }
+        margin-bottom: 20px; }
         #mHeader .menubar .menu_left .call {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
-          padding: 0 40px 0 50px;
+          padding: 0 0 0 30px;
           text-align: left; }
           #mHeader .menubar .menu_left .call strong {
             font-size: 20px; }
@@ -623,7 +657,7 @@
             #mHeader .menubar .menu_left .call .m_counsel + .m_counsel {
               margin-left: 15px; }
       #mHeader .menubar #mGnb {
-        height: calc(100vh - vw-calc-tablet(200)); }
+        height: calc(100vh - vw-calc-mobile(200)); }
         #mHeader .menubar #mGnb a {
           display: inline-block; }
         #mHeader .menubar #mGnb > ul {
@@ -634,7 +668,7 @@
             box-sizing: border-box;
             padding-right: 0;
             width: 100%;
-            margin-bottom: 4.1666666667vw;
+            margin-bottom: 5.5555555556vw;
             text-align: left; }
             #mHeader .menubar #mGnb > ul > li.on a {
               color: #000; }
@@ -645,11 +679,11 @@
                 -ms-transform: scale(1);
                 transform: scale(1); }
             #mHeader .menubar #mGnb > ul > li > a {
-              font-size: 6.6666666667vw;
+              font-size: 13.8888888889vw;
               font-weight: 800;
               position: relative;
               color: #43366d;
-              padding-left: 50px; }
+              padding-left: 30px; }
               #mHeader .menubar #mGnb > ul > li > a::before {
                 -webkit-transform: scale(0);
                 -moz-transform: scale(0);
@@ -662,10 +696,10 @@
                 transition: all 0.3s;
                 content: "";
                 position: absolute;
-                bottom: -0.25vw;
+                bottom: -0.8333333333vw;
                 left: 0;
                 width: 100%;
-                height: 0.1666666667vw;
+                height: 0.5555555556vw;
                 background: #000;
                 display: none; }
             #mHeader .menubar #mGnb > ul > li > .dep2 {
@@ -674,28 +708,29 @@
               right: auto;
               left: 0;
               width: 100%;
+              height: auto;
               margin-top: 0;
               text-align: left;
               display: none;
               background: #e7dcf0;
-              padding: 20px 0 20px 35px; }
+              padding: 20px 0 10px 35px; }
               #mHeader .menubar #mGnb > ul > li > .dep2 > li {
-                margin-bottom: 2.5vw; }
+                margin-bottom: 8.3333333333vw; }
                 #mHeader .menubar #mGnb > ul > li > .dep2 > li > a {
                   -webkit-box-sizing: border-box;
                   -moz-box-sizing: border-box;
                   box-sizing: border-box;
-                  font-size: 3.3333333333vw;
+                  font-size: 5.5555555556vw;
                   font-weight: 600;
                   display: inline-block;
-                  padding-left: 3.3333333333vw; }
+                  padding-left: 5.5555555556vw; }
       #mHeader .menubar .gnb_close_btn {
         -webkit-background-size: cover !important;
         -moz-background-size: cover !important;
         background-size: cover !important;
         position: absolute;
         top: 20px;
-        right: 40px;
+        right: 20px;
         width: 28px;
         height: 28px;
         background: url("../images/layout/m_close_menu.svg") no-repeat center; }
