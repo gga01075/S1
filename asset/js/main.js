@@ -28,6 +28,7 @@ $(document).ready(function () {
         }
         //태블릿,모바일 버전 ==> 마우스휠 이벤트 제거, 위치 제자리로 
         else if(win_width<1367){ 
+          tgIdx = 0;
           $('.tg').removeAttr('style');
           $('#footer').css({top:0,'z-index':100});
         }
