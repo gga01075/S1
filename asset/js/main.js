@@ -47,10 +47,12 @@ $(document).ready(function () {
       if(win_width<1367){
         return false;
       }
-      //delta값 구하기
+      //delta값 구하기 
       //e.originalEvent.wheelDelta 파이어폭스를 제외한 나머지 브라우저
       //e.originalEvent.detail*-1 파이어폭스 only
-      delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+
+      if (e.originalEvent.wheelDelta) delta = e.originalEvent.wheelDelta / 120; /* IE/Chrome/Opera */
+      else if (e.detail) delta = -e.detail/3; /* Mozilla case */
       console.log(delta);
 
       if (_this.hasClass('subwheel')) {
@@ -58,7 +60,7 @@ $(document).ready(function () {
       } else {
         onePageScrolling();
       }
-    
+      console.log(delta);
     }, 200);
   });
 
@@ -87,7 +89,7 @@ $(document).ready(function () {
       tgIdx--;
     }
     $('.tg').css({top: -(tgIdx*100) + '%'});
-    console.log(tgIdx);
+    // console.log(tgIdx);
     if(tgIdx===3){
         $('#footer').css({'z-index':90}).stop().fadeOut('fast');
     }
@@ -106,9 +108,9 @@ $(document).ready(function () {
       isNext = false;
       return false;
     }
-    console.log('subWheel()');
+    // console.log('subWheel()');
     if (tgIdx === 1) {
-      marginT = marginT + delta * 1.3;
+      marginT = marginT + delta * 120;
       console.log(marginT);
       if (marginT > 0) {
         marginT = 0;
